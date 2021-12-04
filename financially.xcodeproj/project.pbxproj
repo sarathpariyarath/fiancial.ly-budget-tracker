@@ -14,6 +14,7 @@
 		37B9A000275B50DB004210CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B99FFF275B50DB004210CD /* Assets.xcassets */; };
 		37B9A003275B50DB004210CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B9A001275B50DB004210CD /* LaunchScreen.storyboard */; };
 		37B9A00C275B7200004210CD /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A00B275B7200004210CD /* AddTransactionViewController.swift */; };
+		37B9A00F275BC6A6004210CD /* NewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B9A00E275BC6A6004210CD /* NewCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		37B9A002275B50DB004210CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37B9A004275B50DB004210CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37B9A00B275B7200004210CD /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		37B9A00E275BC6A6004210CD /* NewCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				37B9A00B275B7200004210CD /* AddTransactionViewController.swift */,
+				37B9A00E275BC6A6004210CD /* NewCategoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				37B99FF4275B50DB004210CD /* AppDelegate.swift in Sources */,
 				37B99FFE275B50DB004210CD /* financially.xcdatamodeld in Sources */,
+				37B9A00F275BC6A6004210CD /* NewCategoryViewController.swift in Sources */,
 				37B99FF6275B50DB004210CD /* SceneDelegate.swift in Sources */,
 				37B9A00C275B7200004210CD /* AddTransactionViewController.swift in Sources */,
 			);

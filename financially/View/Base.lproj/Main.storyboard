@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="09H-qA-5x9">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -25,11 +25,22 @@
                                     <segue destination="Nf3-fV-fAO" kind="show" id="BcS-0e-6Ah"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6h0-zd-20p">
+                                <rect key="frame" x="129" y="507" width="156" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="ADD NEW EXPENSE"/>
+                                <connections>
+                                    <segue destination="snW-4R-jb6" kind="show" id="DJr-Lc-4bD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6h0-zd-20p" firstAttribute="top" secondItem="0Bp-wB-wlp" secondAttribute="bottom" constant="43.5" id="5ZV-v9-A4z"/>
                             <constraint firstItem="0Bp-wB-wlp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BEq-va-DZw"/>
+                            <constraint firstItem="6h0-zd-20p" firstAttribute="centerX" secondItem="0Bp-wB-wlp" secondAttribute="centerX" id="kgp-fr-3tx"/>
+                            <constraint firstItem="6h0-zd-20p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="v4j-74-ez0"/>
                             <constraint firstItem="0Bp-wB-wlp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wg0-WN-pNX"/>
                         </constraints>
                     </view>
@@ -38,6 +49,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="895.6521739130435" y="69.642857142857139"/>
+        </scene>
+        <!--New Category View Controller-->
+        <scene sceneID="i4s-vj-fQZ">
+            <objects>
+                <viewController id="snW-4R-jb6" customClass="NewCategoryViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oux-Dm-5TP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" INCOME CATEGORIES " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8l5-44-aze">
+                                <rect key="frame" x="20" y="108" width="374" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7F6-i6-i2Z">
+                                <rect key="frame" x="20" y="146" width="374" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ADD NEW INCOME CATEGORY HERE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D4j-5k-tid">
+                                        <rect key="frame" x="0.0" y="0.0" width="297.5" height="40"/>
+                                        <color key="backgroundColor" red="0.15236347850000001" green="0.15236347850000001" blue="0.15236347850000001" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="upo-mf-Rbc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-hJ-jrW">
+                                        <rect key="frame" x="305.5" y="0.0" width="68.5" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="  ADD  ">
+                                            <color key="baseBackgroundColor" red="0.015737749950000001" green="0.89213632750000005" blue="1" alpha="0.62381001660000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fEe-Qw-DJO"/>
+                        <color key="backgroundColor" red="0.1186374053" green="0.1186374053" blue="0.1186374053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fEe-Qw-DJO" firstAttribute="trailing" secondItem="7F6-i6-i2Z" secondAttribute="trailing" constant="20" id="9mJ-hI-nbL"/>
+                            <constraint firstItem="fEe-Qw-DJO" firstAttribute="trailing" secondItem="8l5-44-aze" secondAttribute="trailing" constant="20" id="BOG-xU-NU9"/>
+                            <constraint firstItem="7F6-i6-i2Z" firstAttribute="top" secondItem="8l5-44-aze" secondAttribute="bottom" constant="20" id="KqW-UK-iI9"/>
+                            <constraint firstItem="7F6-i6-i2Z" firstAttribute="centerX" secondItem="oux-Dm-5TP" secondAttribute="centerX" id="MwM-q9-EKd"/>
+                            <constraint firstItem="7F6-i6-i2Z" firstAttribute="leading" secondItem="fEe-Qw-DJO" secondAttribute="leading" constant="20" id="X14-wQ-FJy"/>
+                            <constraint firstItem="8l5-44-aze" firstAttribute="leading" secondItem="fEe-Qw-DJO" secondAttribute="leading" constant="20" id="g9Y-n2-EZW"/>
+                            <constraint firstItem="8l5-44-aze" firstAttribute="top" secondItem="fEe-Qw-DJO" secondAttribute="top" constant="20" id="lT6-LA-9u6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QId-Qi-lrE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZu-sE-id2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895.6521739130435" y="745.98214285714278"/>
         </scene>
         <!--Add Transaction View Controller-->
         <scene sceneID="ypt-xP-12w">
