@@ -29,6 +29,13 @@ extension ExpenseCategoryViewController: UITableViewDelegate, UITableViewDataSou
         cell.textLabel?.text = categoryItems[indexPath.row]
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
+                    print("Delete Action Tapped")
+                }
+                deleteAction.backgroundColor = .red
+                let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+                return configuration
+    }
     
 }
