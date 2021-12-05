@@ -61,7 +61,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" EXPENSE CATEGORIES : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNi-cW-Baq" userLabel="INCOME CATEGORIES">
                                 <rect key="frame" x="20" y="64" width="335" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="grO-xy-AcE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="grO-xy-AcE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,7 +142,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" INCOME CATEGORIES : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXX-fz-wf4" userLabel="INCOME CATEGORIES">
                                 <rect key="frame" x="20" y="64" width="335" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="g4H-9M-uVG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="g4H-9M-uVG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -203,6 +203,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="INCOME CATEGORIES" image="rectangle.badge.plus" catalog="system" id="mDZ-Ec-bMp"/>
                     <connections>
+                        <outlet property="addIncomeTextField" destination="aZC-sX-NBK" id="76b-8N-YJH"/>
                         <outlet property="incomeCategoryTable" destination="E74-Ul-rcS" id="LYy-r4-tSK"/>
                     </connections>
                 </viewController>

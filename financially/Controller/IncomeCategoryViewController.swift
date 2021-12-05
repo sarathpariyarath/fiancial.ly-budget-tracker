@@ -9,6 +9,7 @@ import UIKit
 
 class IncomeCategoryViewController: UIViewController {
     
+    @IBOutlet weak var addIncomeTextField: UITextField!
     @IBOutlet weak var incomeCategoryTable: UITableView!
     var categoryItems = ["MacBook", "Food", "Party", "Petrol", "Car Loan", "EMI", "Biryani", "Clothes"]
     override func viewDidLoad() {
