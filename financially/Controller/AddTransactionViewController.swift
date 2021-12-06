@@ -8,7 +8,6 @@
 import UIKit
 
 class AddTransactionViewController: UIViewController {
-    var categoryItems = ["MacBook", "Food", "Party", "Petrol", "Car Loan", "EMI", "Biryani", "Clothes"]
     //context manager
     let context = CoreDataManager.shared.persistentContainer.viewContext
     var incomeTransactions: [IncomeTransaction]?
@@ -19,7 +18,6 @@ class AddTransactionViewController: UIViewController {
     @IBOutlet weak var addTransactionClicked: UIButton!
     @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var categoryPicker: UIPickerView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,21 +29,25 @@ class AddTransactionViewController: UIViewController {
         amountTextField.delegate = self
         notesTextField.delegate = self
         categoryPicker.selectRow(3, inComponent: 0, animated: true)
+        fetchIncomeTransactions()
+    }
+    func clearTextField() {
+        titleTextField.text = ""
+        amountTextField.text = ""
+        notesTextField.text = ""
     }
     func fetchIncomeTransactions() {
-            //fetch the data from tableview
-            do {
-                self.incomeTransactions = try context.fetch(IncomeTransaction.fetchRequest())
-                
-            } catch {
-                print("error \(error.localizedDescription)")
-            }
+        //fetch saved data from database
+        
+        do {
+            self.incomeTransactions = try context.fetch(IncomeTransaction.fetchRequest())
             
-            
+        } catch {
+            print("error \(error.localizedDescription)")
         }
+    }
     
     @IBAction func addTransactionClicked(_ sender: Any) {
-        
         if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
             let incomeExpenseObject = IncomeTransaction(context: self.context)
             incomeExpenseObject.title = titleTextField.text
@@ -55,22 +57,20 @@ class AddTransactionViewController: UIViewController {
             
             incomeExpenseObject.note = notesTextField.text
             incomeExpenseObject.dateAndTime = dateAndTimePicker.date
-            print("Income")
-            
+            clearTextField()
             do {
                 try self.context.save()
                 fetchIncomeTransactions()
             } catch {
                 print("Error on save context")
             }
-            print(incomeExpenseObject)
-            print(incomeExpenseObject.dateAndTime!.formatted())
             for i in 0 ..< incomeTransactions!.count {
                 let list = incomeTransactions![i]
                 print(list.title!)
                 print(list.amount)
-                print(list.dateAndTime!)
+                print(list.dateAndTime!.formatted())
                 print(list.note!)
+                print("-----------------------------------")
             }
         } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 {
             print("Expense")
@@ -85,10 +85,11 @@ extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categoryItems.count
+        return incomeTransactions?.count ?? 0
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categoryItems[row]
+        let list = incomeTransactions?[row]
+        return list!.title
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
