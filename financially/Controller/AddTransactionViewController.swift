@@ -28,8 +28,8 @@ class AddTransactionViewController: UIViewController {
         titleTextField.delegate = self
         amountTextField.delegate = self
         notesTextField.delegate = self
-        categoryPicker.selectRow(3, inComponent: 0, animated: true)
         fetchIncomeTransactions()
+        categoryPicker.selectRow((incomeTransactions!.count/2), inComponent: 0, animated: true)
     }
     func clearTextField() {
         titleTextField.text = ""
