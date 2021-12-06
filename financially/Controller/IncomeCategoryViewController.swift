@@ -7,16 +7,18 @@
 
 import UIKit
 
-class IncomeCategoryViewController: UIViewController {
+class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var addIncomeTextField: UITextField!
-    @IBOutlet weak var incomeCategoryTable: UITableView!
+    @IBOutlet weak var addIncomeTextField: UITextField! //income category textfield
+    @IBOutlet weak var incomeCategoryTable: UITableView! //table showing income categories
+    
     var categoryItems = ["MacBook", "Food", "Party", "Petrol", "Car Loan", "EMI", "Biryani", "Clothes"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "INCOME CATEGORIES"
         incomeCategoryTable.delegate = self
         incomeCategoryTable.dataSource = self
+        addIncomeTextField.delegate = self
     }
     
 }
@@ -38,5 +40,9 @@ extension IncomeCategoryViewController: UITableViewDelegate, UITableViewDataSour
                 let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
                 return configuration
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           addIncomeTextField.endEditing(true)
+           return true
+       }
 
 }

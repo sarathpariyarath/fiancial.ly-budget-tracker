@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="09H-qA-5x9">
-    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bp-wB-wlp">
-                                <rect key="frame" x="110" y="318" width="155" height="31"/>
+                                <rect key="frame" x="129.5" y="432.5" width="155" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="ADD NEW EXPENSE"/>
                                 <connections>
@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6h0-zd-20p">
-                                <rect key="frame" x="129" y="392.5" width="117" height="48"/>
+                                <rect key="frame" x="129" y="507" width="156" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="ADD NEW EXPENSE"/>
                                 <connections>
@@ -55,11 +55,11 @@
             <objects>
                 <viewController id="uoc-Oe-UED" customClass="ExpenseCategoryViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8tf-a1-6YI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" EXPENSE CATEGORIES : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNi-cW-Baq" userLabel="INCOME CATEGORIES">
-                                <rect key="frame" x="20" y="64" width="335" height="18"/>
+                                <rect key="frame" x="39.5" y="108" width="335" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="grO-xy-AcE"/>
                                 </constraints>
@@ -68,10 +68,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1xO-wH-zc1">
-                                <rect key="frame" x="20" y="97" width="335" height="40"/>
+                                <rect key="frame" x="20" y="141" width="374" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ADD EXPENSE CATEGORY HERE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hih-XH-3QH">
-                                        <rect key="frame" x="0.0" y="0.0" width="258.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="297.5" height="40"/>
                                         <color key="backgroundColor" red="0.15236347850000001" green="0.15236347850000001" blue="0.15236347850000001" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9X9-dE-bgK"/>
@@ -80,7 +80,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVA-2K-WtU">
-                                        <rect key="frame" x="266.5" y="0.0" width="68.5" height="40"/>
+                                        <rect key="frame" x="305.5" y="0.0" width="68.5" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="  ADD  ">
                                             <color key="baseBackgroundColor" red="0.015737749950000001" green="0.89213632750000005" blue="1" alpha="0.62381001660000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -89,17 +89,17 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ccT-B4-zfw">
-                                <rect key="frame" x="10" y="157" width="355" height="461"/>
+                                <rect key="frame" x="10" y="201" width="394" height="461"/>
                                 <color key="backgroundColor" red="0.1186374053" green="0.1186374053" blue="0.1186374053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="461" id="4c8-rw-1S3"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseCategoryCell" id="lu0-Ue-oes">
-                                        <rect key="frame" x="0.0" y="44.5" width="355" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lu0-Ue-oes" id="x9O-fU-Chd">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1186374053" green="0.1186374053" blue="0.1186374053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,12 +110,12 @@
                         <viewLayoutGuide key="safeArea" id="w1D-OK-ada"/>
                         <color key="backgroundColor" red="0.1186374053" green="0.1186374053" blue="0.1186374053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tNi-cW-Baq" firstAttribute="leading" secondItem="w1D-OK-ada" secondAttribute="leading" constant="20" id="00R-Rx-5Hr"/>
+                            <constraint firstItem="tNi-cW-Baq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w1D-OK-ada" secondAttribute="leading" id="00R-Rx-5Hr"/>
                             <constraint firstItem="tNi-cW-Baq" firstAttribute="centerX" secondItem="8tf-a1-6YI" secondAttribute="centerX" id="Efo-Ol-pql"/>
                             <constraint firstItem="w1D-OK-ada" firstAttribute="trailing" secondItem="1xO-wH-zc1" secondAttribute="trailing" constant="20" id="I9N-yL-N84"/>
                             <constraint firstItem="ccT-B4-zfw" firstAttribute="centerX" secondItem="8tf-a1-6YI" secondAttribute="centerX" id="KH8-77-f63"/>
                             <constraint firstItem="1xO-wH-zc1" firstAttribute="top" secondItem="tNi-cW-Baq" secondAttribute="bottom" constant="15" id="TIv-HL-Dlr"/>
-                            <constraint firstItem="w1D-OK-ada" firstAttribute="trailing" secondItem="tNi-cW-Baq" secondAttribute="trailing" constant="20" id="fUl-5F-Ce9"/>
+                            <constraint firstItem="w1D-OK-ada" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tNi-cW-Baq" secondAttribute="trailing" id="fUl-5F-Ce9"/>
                             <constraint firstItem="tNi-cW-Baq" firstAttribute="top" secondItem="w1D-OK-ada" secondAttribute="top" constant="20" id="fsh-Wg-Y44"/>
                             <constraint firstItem="ccT-B4-zfw" firstAttribute="top" secondItem="1xO-wH-zc1" secondAttribute="bottom" constant="20" id="n1U-Dn-xNw"/>
                             <constraint firstItem="ccT-B4-zfw" firstAttribute="leading" secondItem="w1D-OK-ada" secondAttribute="leading" constant="10" id="rZz-Hw-9wh"/>
@@ -136,11 +136,11 @@
             <objects>
                 <viewController id="9q6-98-OZ5" customClass="IncomeCategoryViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HIr-TW-jGA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" INCOME CATEGORIES : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXX-fz-wf4" userLabel="INCOME CATEGORIES">
-                                <rect key="frame" x="20" y="64" width="335" height="18"/>
+                                <rect key="frame" x="20" y="108" width="374" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="g4H-9M-uVG"/>
                                 </constraints>
@@ -149,10 +149,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Arv-hc-frf">
-                                <rect key="frame" x="20" y="97" width="335" height="40"/>
+                                <rect key="frame" x="20" y="141" width="374" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ADD INCOME CATEGORY HERE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZC-sX-NBK">
-                                        <rect key="frame" x="0.0" y="0.0" width="258.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="297.5" height="40"/>
                                         <color key="backgroundColor" red="0.15236347850000001" green="0.15236347850000001" blue="0.15236347850000001" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dQS-NJ-Zhf"/>
@@ -161,7 +161,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTY-Ns-FZE">
-                                        <rect key="frame" x="266.5" y="0.0" width="68.5" height="40"/>
+                                        <rect key="frame" x="305.5" y="0.0" width="68.5" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="  ADD  ">
                                             <color key="baseBackgroundColor" red="0.015737749950000001" green="0.89213632750000005" blue="1" alpha="0.62381001660000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -170,14 +170,14 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E74-Ul-rcS">
-                                <rect key="frame" x="10" y="157" width="355" height="461"/>
+                                <rect key="frame" x="10" y="201" width="394" height="612"/>
                                 <color key="backgroundColor" red="0.1186374053" green="0.1186374053" blue="0.1186374053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="incomeCategoryCell" id="20P-W4-OgO">
-                                        <rect key="frame" x="0.0" y="44.5" width="355" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="20P-W4-OgO" id="5QS-Ej-uvc">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.1186374053" green="0.1186374053" blue="0.1186374053" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,7 +203,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="INCOME CATEGORIES" image="rectangle.badge.plus" catalog="system" id="mDZ-Ec-bMp"/>
                     <connections>
-                        <outlet property="addIncomeTextField" destination="aZC-sX-NBK" id="76b-8N-YJH"/>
+                        <outlet property="addIncomeTextField" destination="aZC-sX-NBK" id="C6i-IZ-hIA"/>
                         <outlet property="incomeCategoryTable" destination="E74-Ul-rcS" id="LYy-r4-tSK"/>
                     </connections>
                 </viewController>
@@ -235,14 +235,14 @@
             <objects>
                 <viewController id="Nf3-fV-fAO" customClass="AddTransactionViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6XE-0a-feU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-tF-e9S" userLabel="Form">
-                                <rect key="frame" x="20" y="64" width="476.5" height="665"/>
+                                <rect key="frame" x="20" y="108" width="374" height="665"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TITLE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfL-Yw-BaY">
-                                        <rect key="frame" x="0.0" y="0.0" width="476.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.15236347853535348" green="0.15236347853535348" blue="0.15236347853535348" alpha="0.75638969370860931" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ghg-e9-dt4"/>
@@ -251,7 +251,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rIj-6Y-8De">
-                                        <rect key="frame" x="0.0" y="55" width="476.5" height="39"/>
+                                        <rect key="frame" x="0.0" y="55" width="374" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="Rcx-v5-qOv"/>
                                         </constraints>
@@ -261,7 +261,7 @@
                                         </segments>
                                     </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AMOUNT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXg-2q-qQb">
-                                        <rect key="frame" x="0.0" y="108" width="476.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="108" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.15236347850000001" green="0.15236347850000001" blue="0.15236347850000001" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zX5-4d-RbC"/>
@@ -270,7 +270,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3c-K9-PIa">
-                                        <rect key="frame" x="0.0" y="163" width="476.5" height="216"/>
+                                        <rect key="frame" x="0.0" y="163" width="374" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" DATE &amp; TIME : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAy-N1-2LQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="216"/>
@@ -279,12 +279,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lWm-FZ-aBc">
-                                                <rect key="frame" x="106" y="0.0" width="370.5" height="216"/>
+                                                <rect key="frame" x="106" y="0.0" width="268" height="216"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="NOTE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3e-Dt-OUH">
-                                        <rect key="frame" x="0.0" y="394" width="476.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="394" width="374" height="40"/>
                                         <color key="backgroundColor" red="0.15236347850000001" green="0.15236347850000001" blue="0.15236347850000001" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PvE-ZN-BrH"/>
@@ -293,7 +293,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JW-yb-pk1">
-                                        <rect key="frame" x="0.0" y="449" width="476.5" height="216"/>
+                                        <rect key="frame" x="0.0" y="449" width="374" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" CHOOSE CATEGORY :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-7v-XyW">
                                                 <rect key="frame" x="0.0" y="0.0" width="156.5" height="216"/>
@@ -302,7 +302,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sA1-pP-5Uf">
-                                                <rect key="frame" x="156.5" y="0.0" width="320" height="216"/>
+                                                <rect key="frame" x="156.5" y="0.0" width="217.5" height="216"/>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
@@ -314,7 +314,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3I-w4-9xs">
-                                <rect key="frame" x="20" y="609" width="476.5" height="38"/>
+                                <rect key="frame" x="20" y="804" width="374" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="co1-uQ-zgs"/>
                                 </constraints>
@@ -350,7 +350,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="09H-qA-5x9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s1V-Ow-bJg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="AccentColor"/>
                     </navigationBar>
