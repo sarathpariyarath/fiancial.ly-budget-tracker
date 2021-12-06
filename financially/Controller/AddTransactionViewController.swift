@@ -13,12 +13,12 @@ class AddTransactionViewController: UIViewController {
     let context = CoreDataManager.shared.persistentContainer.viewContext
     var incomeTransactions: [IncomeTransaction]?
     @IBOutlet weak var transactionTypeSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateAndTimePicker: UIDatePicker!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var addTransactionClicked: UIButton!
     @IBOutlet weak var notesTextField: UITextField!
+    @IBOutlet weak var categoryPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,9 @@ class AddTransactionViewController: UIViewController {
         titleTextField.delegate = self
         amountTextField.delegate = self
         notesTextField.delegate = self
-        fetchTodoList()
+        categoryPicker.selectRow(3, inComponent: 0, animated: true)
     }
-    func fetchTodoList() {
+    func fetchIncomeTransactions() {
             //fetch the data from tableview
             do {
                 self.incomeTransactions = try context.fetch(IncomeTransaction.fetchRequest())
@@ -59,7 +59,7 @@ class AddTransactionViewController: UIViewController {
             
             do {
                 try self.context.save()
-                fetchTodoList()
+                fetchIncomeTransactions()
             } catch {
                 print("Error on save context")
             }
@@ -67,15 +67,14 @@ class AddTransactionViewController: UIViewController {
             print(incomeExpenseObject.dateAndTime!.formatted())
             for i in 0 ..< incomeTransactions!.count {
                 let list = incomeTransactions![i]
+                print(list.title!)
                 print(list.amount)
+                print(list.dateAndTime!)
+                print(list.note!)
             }
         } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 {
             print("Expense")
         }
-//        print(titleTextField.text!)
-//        print(dateAndTimePicker.date.formatted())
-//        print(notesTextField.text!)
-//        print(amountTextField.text!)
     }
     
 }

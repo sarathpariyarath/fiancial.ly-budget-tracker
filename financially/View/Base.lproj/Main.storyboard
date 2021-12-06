@@ -342,7 +342,7 @@
                     <connections>
                         <outlet property="addTransactionClicked" destination="E3I-w4-9xs" id="4lg-9n-EfJ"/>
                         <outlet property="amountTextField" destination="tXg-2q-qQb" id="s58-RI-RdV"/>
-                        <outlet property="categoryPicker" destination="sA1-pP-5Uf" id="Phz-bd-PgP"/>
+                        <outlet property="categoryPicker" destination="sA1-pP-5Uf" id="yrM-dh-DKV"/>
                         <outlet property="dateAndTimePicker" destination="lWm-FZ-aBc" id="Qki-WO-4aJ"/>
                         <outlet property="notesTextField" destination="Q3e-Dt-OUH" id="Jgm-FV-YAf"/>
                         <outlet property="titleTextField" destination="bfL-Yw-BaY" id="pY5-O2-kgN"/>
