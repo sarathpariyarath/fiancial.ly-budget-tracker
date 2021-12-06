@@ -248,7 +248,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Ghg-e9-dt4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rIj-6Y-8De">
                                         <rect key="frame" x="0.0" y="55" width="374" height="39"/>
@@ -267,7 +267,7 @@
                                             <constraint firstAttribute="height" constant="40" id="zX5-4d-RbC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3c-K9-PIa">
                                         <rect key="frame" x="0.0" y="163" width="374" height="216"/>
@@ -290,7 +290,7 @@
                                             <constraint firstAttribute="height" constant="40" id="PvE-ZN-BrH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JW-yb-pk1">
                                         <rect key="frame" x="0.0" y="449" width="374" height="216"/>
@@ -322,6 +322,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="ADD TRANSACTION">
                                     <color key="baseBackgroundColor" red="0.015737749950000001" green="0.89213632750000005" blue="1" alpha="0.62381001660000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addTransactionClicked:" destination="Nf3-fV-fAO" eventType="touchUpInside" id="bwX-F5-s41"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4en-Mu-NzH"/>
@@ -337,7 +340,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="ddh-UZ-VFl"/>
                     <connections>
+                        <outlet property="addTransactionClicked" destination="E3I-w4-9xs" id="4lg-9n-EfJ"/>
+                        <outlet property="amountTextField" destination="tXg-2q-qQb" id="s58-RI-RdV"/>
                         <outlet property="categoryPicker" destination="sA1-pP-5Uf" id="Phz-bd-PgP"/>
+                        <outlet property="dateAndTimePicker" destination="lWm-FZ-aBc" id="Qki-WO-4aJ"/>
+                        <outlet property="notesTextField" destination="Q3e-Dt-OUH" id="Jgm-FV-YAf"/>
+                        <outlet property="titleTextField" destination="bfL-Yw-BaY" id="pY5-O2-kgN"/>
+                        <outlet property="transactionTypeSegmentedControl" destination="rIj-6Y-8De" id="ddo-8L-fIC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2al-ha-sPF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

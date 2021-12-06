@@ -12,6 +12,7 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addIncomeTextField: UITextField! //income category textfield
     @IBOutlet weak var incomeCategoryTable: UITableView! //table showing income categories
     
+    
     var categoryItems = ["MacBook", "Food", "Party", "Petrol", "Car Loan", "EMI", "Biryani", "Clothes"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,7 @@ extension IncomeCategoryViewController: UITableViewDelegate, UITableViewDataSour
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
            addIncomeTextField.endEditing(true)
+           print(addIncomeTextField.text!)
            return true
        }
 
