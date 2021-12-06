@@ -8,11 +8,10 @@
 import UIKit
 
 class AddTransactionViewController: UIViewController {
-    var textField = UITextField()
     var categoryItems = ["MacBook", "Food", "Party", "Petrol", "Car Loan", "EMI", "Biryani", "Clothes"]
     //context manager
     let context = CoreDataManager.shared.persistentContainer.viewContext
-    
+    var incomeTransactions: [IncomeTransaction]?
     @IBOutlet weak var transactionTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -31,34 +30,52 @@ class AddTransactionViewController: UIViewController {
         titleTextField.delegate = self
         amountTextField.delegate = self
         notesTextField.delegate = self
+        fetchTodoList()
     }
+    func fetchTodoList() {
+            //fetch the data from tableview
+            do {
+                self.incomeTransactions = try context.fetch(IncomeTransaction.fetchRequest())
+                
+            } catch {
+                print("error \(error.localizedDescription)")
+            }
+            
+            
+        }
     
     @IBAction func addTransactionClicked(_ sender: Any) {
-        //create object
-        print(titleTextField.text!)
         
         if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
-//            var incomeAmount: Float = amountTextField
             let incomeExpenseObject = IncomeTransaction(context: self.context)
             incomeExpenseObject.title = titleTextField.text
-//            incomeExpenseObject.amount = incomeAmount
+            if let incomeAmount = Float(amountTextField.text!) {
+                incomeExpenseObject.amount = incomeAmount
+            }
+            
             incomeExpenseObject.note = notesTextField.text
             incomeExpenseObject.dateAndTime = dateAndTimePicker.date
             print("Income")
             
             do {
                 try self.context.save()
+                fetchTodoList()
             } catch {
-                print("error")
+                print("Error on save context")
             }
             print(incomeExpenseObject)
+            print(incomeExpenseObject.dateAndTime!.formatted())
+            for i in 0 ..< incomeTransactions!.count {
+                let list = incomeTransactions![i]
+                print(list.amount)
+            }
         } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 {
             print("Expense")
         }
-        print(dateAndTimePicker.date.formatted())
-        print(notesTextField.text!)
-        print(amountTextField.text!)
-        textField.text = ""
+//        print(titleTextField.text!)
+//        print(dateAndTimePicker.date.formatted())
+//        print(notesTextField.text!)
+//        print(amountTextField.text!)
     }
     
 }

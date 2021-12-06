@@ -20,6 +20,7 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
         incomeCategoryTable.delegate = self
         incomeCategoryTable.dataSource = self
         addIncomeTextField.delegate = self
+        
     }
     
 }
