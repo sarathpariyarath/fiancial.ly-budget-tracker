@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		370673F5275DDBDC00A88228 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370673F4275DDBDC00A88228 /* CoreDataManager.swift */; };
-		370673F9275DF3B200A88228 /* IncomeTransaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370673F7275DF3B200A88228 /* IncomeTransaction+CoreDataClass.swift */; };
-		370673FA275DF3B200A88228 /* IncomeTransaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370673F8275DF3B200A88228 /* IncomeTransaction+CoreDataProperties.swift */; };
+		37067401275F0D7F00A88228 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370673FF275F0D7F00A88228 /* Transaction+CoreDataClass.swift */; };
+		37067402275F0D7F00A88228 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37067400275F0D7F00A88228 /* Transaction+CoreDataProperties.swift */; };
 		37B99FF4275B50DB004210CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B99FF3275B50DB004210CD /* AppDelegate.swift */; };
 		37B99FF6275B50DB004210CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B99FF5275B50DB004210CD /* SceneDelegate.swift */; };
 		37B99FFB275B50DB004210CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B99FF9275B50DB004210CD /* Main.storyboard */; };
@@ -23,8 +23,8 @@
 
 /* Begin PBXFileReference section */
 		370673F4275DDBDC00A88228 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		370673F7275DF3B200A88228 /* IncomeTransaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IncomeTransaction+CoreDataClass.swift"; sourceTree = "<group>"; };
-		370673F8275DF3B200A88228 /* IncomeTransaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IncomeTransaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		370673FF275F0D7F00A88228 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		37067400275F0D7F00A88228 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		37B99FF0275B50DB004210CD /* financially.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = financially.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B99FF3275B50DB004210CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37B99FF5275B50DB004210CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +52,8 @@
 		370673F6275DDC3000A88228 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				370673F7275DF3B200A88228 /* IncomeTransaction+CoreDataClass.swift */,
-				370673F8275DF3B200A88228 /* IncomeTransaction+CoreDataProperties.swift */,
+				370673FF275F0D7F00A88228 /* Transaction+CoreDataClass.swift */,
+				37067400275F0D7F00A88228 /* Transaction+CoreDataProperties.swift */,
 				370673F4275DDBDC00A88228 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
@@ -184,9 +184,9 @@
 				37B99FFE275B50DB004210CD /* financially.xcdatamodeld in Sources */,
 				37B99FF6275B50DB004210CD /* SceneDelegate.swift in Sources */,
 				37B9A00C275B7200004210CD /* AddTransactionViewController.swift in Sources */,
-				370673FA275DF3B200A88228 /* IncomeTransaction+CoreDataProperties.swift in Sources */,
+				37067401275F0D7F00A88228 /* Transaction+CoreDataClass.swift in Sources */,
+				37067402275F0D7F00A88228 /* Transaction+CoreDataProperties.swift in Sources */,
 				37B9A013275C9D49004210CD /* ExpenseCategoryViewController.swift in Sources */,
-				370673F9275DF3B200A88228 /* IncomeTransaction+CoreDataClass.swift in Sources */,
 				370673F5275DDBDC00A88228 /* CoreDataManager.swift in Sources */,
 				37B9A011275C9A69004210CD /* IncomeCategoryViewController.swift in Sources */,
 			);

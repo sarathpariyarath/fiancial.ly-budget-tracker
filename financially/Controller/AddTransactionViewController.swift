@@ -10,7 +10,7 @@ import UIKit
 class AddTransactionViewController: UIViewController {
     //context manager
     let context = CoreDataManager.shared.persistentContainer.viewContext
-    var incomeTransactions: [IncomeTransaction]?
+    var incomeTransactions: [Transaction]?
     @IBOutlet weak var transactionTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateAndTimePicker: UIDatePicker!
@@ -40,7 +40,7 @@ class AddTransactionViewController: UIViewController {
         //fetch saved data from database
         
         do {
-            self.incomeTransactions = try context.fetch(IncomeTransaction.fetchRequest())
+            self.incomeTransactions = try context.fetch(Transaction.fetchRequest())
             
         } catch {
             print("error \(error.localizedDescription)")
@@ -49,7 +49,8 @@ class AddTransactionViewController: UIViewController {
     
     @IBAction func addTransactionClicked(_ sender: Any) {
         if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
-            let incomeExpenseObject = IncomeTransaction(context: self.context)
+            let incomeExpenseObject = Transaction(context: self.context)
+            incomeExpenseObject.isIncome = true
             incomeExpenseObject.title = titleTextField.text
             if let incomeAmount = Float(amountTextField.text!) {
                 incomeExpenseObject.amount = incomeAmount
@@ -66,14 +67,48 @@ class AddTransactionViewController: UIViewController {
             }
             for i in 0 ..< incomeTransactions!.count {
                 let list = incomeTransactions![i]
-                print(list.title!)
-                print(list.amount)
-                print(list.dateAndTime!.formatted())
-                print(list.note!)
-                print("-----------------------------------")
+                if list.isIncome == true {
+                    print(list.title!)
+                    print(list.amount)
+                    print(list.dateAndTime!.formatted())
+                    print(list.note!)
+                    print(list.isIncome)
+                    print("-----------------------------------")
+                    
+                }
+              
             }
         } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 {
-            print("Expense")
+            print("Expense :")
+            let incomeExpenseObject = Transaction(context: self.context)
+            incomeExpenseObject.isIncome = false
+            incomeExpenseObject.title = titleTextField.text
+            if let incomeAmount = Float(amountTextField.text!) {
+                incomeExpenseObject.amount = incomeAmount
+            }
+            
+            incomeExpenseObject.note = notesTextField.text
+            incomeExpenseObject.dateAndTime = dateAndTimePicker.date
+            clearTextField()
+            do {
+                try self.context.save()
+                fetchIncomeTransactions()
+            } catch {
+                print("Error on save context")
+            }
+            for i in 0 ..< incomeTransactions!.count {
+                let list = incomeTransactions![i]
+                if list.isIncome == false {
+                    print(list.title!)
+                    print(list.amount)
+                    print(list.dateAndTime!.formatted())
+                    print(list.note!)
+                    print(list.isIncome)
+                    print("-----------------------------------")
+                    
+                }
+              
+            }
         }
     }
     
