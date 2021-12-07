@@ -28,7 +28,8 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
         let incomeCategory = Category(context: self.context)
         incomeCategory.categoryName = addIncomeTextField.text
         incomeCategory.isIncome = true
-        
+        addIncomeTextField.text = ""
+        addIncomeTextField.endEditing(true)
         do {
             try self.context.save()
         } catch {
