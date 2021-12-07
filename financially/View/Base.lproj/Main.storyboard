@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -166,6 +167,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="  ADD  ">
                                             <color key="baseBackgroundColor" red="0.015737749950000001" green="0.89213632750000005" blue="1" alpha="0.62381001660000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="incomeCategoryAddButtonClicked:" destination="9q6-98-OZ5" eventType="touchUpInside" id="P1I-83-nlU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -239,7 +243,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MMb-tF-e9S" userLabel="Form">
-                                <rect key="frame" x="20" y="108" width="374" height="665"/>
+                                <rect key="frame" x="20" y="108" width="374" height="718"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TITLE" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfL-Yw-BaY">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -306,9 +310,21 @@
                                             </pickerView>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9r-xq-SZy">
+                                        <rect key="frame" x="0.0" y="680" width="374" height="38"/>
+                                        <color key="backgroundColor" red="0.15236347850000001" green="0.15069454660000001" blue="0.1518674132" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="RCa-wW-jOb"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Attach an image" imagePadding="10">
+                                            <imageReference key="image" image="paperclip" catalog="system" symbolScale="small"/>
+                                            <color key="baseForegroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="BAd-Ki-6Zg"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="374" id="BAd-Ki-6Zg"/>
                                     <constraint firstItem="s3c-K9-PIa" firstAttribute="leading" secondItem="MMb-tF-e9S" secondAttribute="leading" id="wJD-Kz-irw"/>
                                     <constraint firstAttribute="trailing" secondItem="s3c-K9-PIa" secondAttribute="trailing" id="zsq-Lk-rMI"/>
                                 </constraints>
@@ -374,6 +390,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="paperclip" catalog="system" width="121" height="128"/>
         <image name="rectangle.badge.minus" catalog="system" width="128" height="95"/>
         <image name="rectangle.badge.plus" catalog="system" width="128" height="95"/>
         <namedColor name="AccentColor">

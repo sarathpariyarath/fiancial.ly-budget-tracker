@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="categoryName" optional="YES" attributeType="String"/>
+        <attribute name="isIncome" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="dateAndTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -9,5 +13,6 @@
     </entity>
     <elements>
         <element name="Transaction" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Category" positionX="-36" positionY="54" width="128" height="59"/>
     </elements>
 </model>
