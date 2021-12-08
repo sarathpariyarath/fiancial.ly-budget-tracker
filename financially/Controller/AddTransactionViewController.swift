@@ -28,7 +28,7 @@ class AddTransactionViewController: UIViewController {
         titleTextField.delegate = self
         amountTextField.delegate = self
         notesTextField.delegate = self
-        fetchIncomeTransactions()
+        fetchTransactions()
         categoryPicker.selectRow((transactions!.count/2), inComponent: 0, animated: true)
     }
     func clearTextField() {
@@ -36,7 +36,7 @@ class AddTransactionViewController: UIViewController {
         amountTextField.text = ""
         notesTextField.text = ""
     }
-    func fetchIncomeTransactions() {
+    func fetchTransactions() {
         //fetch saved data from database
         
         do {
@@ -61,7 +61,7 @@ class AddTransactionViewController: UIViewController {
             clearTextField()
             do {
                 try self.context.save()
-                fetchIncomeTransactions()
+                fetchTransactions()
             } catch {
                 print("Error on save context")
             }
@@ -92,7 +92,7 @@ class AddTransactionViewController: UIViewController {
             clearTextField()
             do {
                 try self.context.save()
-                fetchIncomeTransactions()
+                fetchTransactions()
             } catch {
                 print("Error on save context")
             }
