@@ -2,7 +2,7 @@
 //  Transaction+CoreDataProperties.swift
 //  financially
 //
-//  Created by Sarath P on 07/12/21.
+//  Created by Sarath P on 09/12/21.
 //
 //
 
@@ -16,11 +16,11 @@ extension Transaction {
         return NSFetchRequest<Transaction>(entityName: "Transaction")
     }
 
-    @NSManaged public var dateAndTime: Date?
-    @NSManaged public var note: String?
     @NSManaged public var amount: Float
-    @NSManaged public var title: String?
+    @NSManaged public var dateAndTime: Date?
     @NSManaged public var isIncome: Bool
+    @NSManaged public var note: String?
+    @NSManaged public var title: String?
 
 }
 

@@ -12,7 +12,7 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var addIncomeTextField: UITextField! //income category textfield
     @IBOutlet weak var incomeCategoryTable: UITableView! //table showing income categories
     
-    var category: [Category]?
+    var incoCategory: [IncomeCategory]?
     var categoryItems = ["MacBook", "Food", "Party", "Petrol", "Car Loan", "EMI", "Biryani", "Clothes"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +25,8 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func incomeCategoryAddButtonClicked(_ sender: Any) {
-        let incomeCategory = Category(context: self.context)
+        let incomeCategory = IncomeCategory(context: self.context)
         incomeCategory.categoryName = addIncomeTextField.text
-        incomeCategory.isIncome = true
         addIncomeTextField.text = ""
         addIncomeTextField.endEditing(true)
         do {
@@ -43,7 +42,7 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
         //fetch saved data from database
         
         do {
-            self.category = try context.fetch(Category.fetchRequest())
+            self.incoCategory = try context.fetch(IncomeCategory.fetchRequest())
             
         } catch {
             print("error \(error.localizedDescription)")
@@ -53,32 +52,36 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
 }
 extension IncomeCategoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return category?.count ?? 0
+        return incoCategory?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "incomeCategoryCell", for: indexPath)
-        let list = category?[indexPath.row]
-        if list?.isIncome == true {
-            cell.textLabel?.text = list!.categoryName
-        }
+        let list = incoCategory?[indexPath.row]
+        cell.textLabel?.text = list!.categoryName
         return cell
         
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
             print("Delete Action Tapped")
-            let category = self.category?[indexPath.row]
+            let category = self.incoCategory?[indexPath.row]
             self.context.delete(category!)
             
             do {
                 try self.context.save()
+                
             } catch{}
-            
             //refetch the data
+            
             self.fetchIncomeTransactions()
             self.incomeCategoryTable.reloadData()
-            
+            for i in 0 ..< self.incoCategory!.count {
+                let list = self.incoCategory![i]
+                print(list.categoryName!)
+                   
+                    
+                }
             
         }
         deleteAction.backgroundColor = .red

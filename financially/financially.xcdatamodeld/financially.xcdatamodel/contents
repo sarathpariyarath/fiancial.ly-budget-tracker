@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Category" representedClassName="Category" syncable="YES">
+    <entity name="ExpenseCategory" representedClassName="ExpenseCategory" syncable="YES">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
-        <attribute name="isIncome" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="IncomeCategory" representedClassName="IncomeCategory" syncable="YES">
+        <attribute name="categoryName" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -13,6 +15,7 @@
     </entity>
     <elements>
         <element name="Transaction" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="Category" positionX="-36" positionY="54" width="128" height="59"/>
+        <element name="IncomeCategory" positionX="-9" positionY="81" width="128" height="44"/>
+        <element name="ExpenseCategory" positionX="-36" positionY="36" width="128" height="44"/>
     </elements>
 </model>
