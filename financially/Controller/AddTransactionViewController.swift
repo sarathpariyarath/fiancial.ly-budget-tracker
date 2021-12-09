@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddTransactionViewController: UIViewController {
+class AddTransactionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //context manager
     let context = CoreDataManager.shared.persistentContainer.viewContext
     var transactions: [Transaction]?
@@ -17,6 +17,7 @@ class AddTransactionViewController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var addTransactionClicked: UIButton!
     @IBOutlet weak var notesTextField: UITextField!
+    @IBOutlet weak var userTransactionImage: UIImageView!
     @IBOutlet weak var categoryPicker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,19 @@ class AddTransactionViewController: UIViewController {
         titleTextField.text = ""
         amountTextField.text = ""
         notesTextField.text = ""
+    }
+    @IBAction func attachImageButtonClicked(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        
+        picker.delegate = self
+        
+        present(picker, animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else {return}
+        userTransactionImage?.image = image
+        dismiss(animated: true)
     }
     func fetchTransactions() {
         //fetch saved data from database
