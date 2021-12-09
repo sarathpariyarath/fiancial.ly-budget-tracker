@@ -21,6 +21,7 @@ extension Transaction {
     @NSManaged public var isIncome: Bool
     @NSManaged public var note: String?
     @NSManaged public var title: String?
+    @NSManaged public var image: Data?
 
 }
 

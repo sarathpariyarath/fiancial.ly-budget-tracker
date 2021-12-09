@@ -9,12 +9,13 @@
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="dateAndTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isIncome" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Transaction" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Transaction" positionX="-63" positionY="-18" width="128" height="119"/>
         <element name="IncomeCategory" positionX="-9" positionY="81" width="128" height="44"/>
         <element name="ExpenseCategory" positionX="-36" positionY="36" width="128" height="44"/>
     </elements>

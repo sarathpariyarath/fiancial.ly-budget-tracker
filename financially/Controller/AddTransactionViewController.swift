@@ -69,6 +69,9 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
             if let incomeAmount = Float(amountTextField.text!) {
                 transactionObject.amount = incomeAmount
             }
+            if let imageData = userTransactionImage.image?.pngData() {
+                transactionObject.image = imageData
+            }
             
             transactionObject.note = notesTextField.text
             transactionObject.dateAndTime = dateAndTimePicker.date
@@ -87,7 +90,12 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                     print(list.dateAndTime!.formatted())
                     print(list.note!)
                     print(list.isIncome)
+                    if list.image != nil {
+                        print(list.image!)
+                    }
                     print("-----------------------------------")
+                   
+                    
                     
                 }
               
@@ -124,6 +132,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
               
             }
         }
+        
     }
     
 }
