@@ -32,11 +32,14 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         fetchTransactions()
         categoryPicker.selectRow((transactions!.count/2), inComponent: 0, animated: true)
     }
+    // Function to clear all textfields
     func clearTextField() {
         titleTextField.text = ""
         amountTextField.text = ""
         notesTextField.text = ""
     }
+    
+    // When attach image button clicked
     @IBAction func attachImageButtonClicked(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
@@ -45,13 +48,17 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         
         present(picker, animated: true)
     }
+    
+    // Function for Image Picker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else {return}
         userTransactionImage?.image = image
         dismiss(animated: true)
     }
+    
+    //Fetch all datas saved in database
     func fetchTransactions() {
-        //fetch saved data from database
+        
         
         do {
             self.transactions = try context.fetch(Transaction.fetchRequest())
@@ -61,6 +68,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         }
     }
     
+    // Add transaction button clicked
     @IBAction func addTransactionClicked(_ sender: Any) {
         if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
             let transactionObject = Transaction(context: self.context)
@@ -100,7 +108,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                 }
               
             }
-        } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 {
+        } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 { //when expense category selected in segmented control
             print("Expense :")
             let transactionObject = Transaction(context: self.context)
             transactionObject.isIncome = false
@@ -118,6 +126,8 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
             } catch {
                 print("Error on save context")
             }
+            
+            // Just to print all items in database
             for i in 0 ..< transactions!.count {
                 let list = transactions![i]
                 if list.isIncome == false {
