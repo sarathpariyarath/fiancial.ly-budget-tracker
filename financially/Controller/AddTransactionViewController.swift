@@ -11,6 +11,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     //context manager
     let context = CoreDataManager.shared.persistentContainer.viewContext
     var transactions: [Transaction]?
+    var incoCategory: [IncomeCategory]?
     @IBOutlet weak var transactionTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateAndTimePicker: UIDatePicker!
@@ -62,6 +63,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         
         do {
             self.transactions = try context.fetch(Transaction.fetchRequest())
+            self.incoCategory = try context.fetch(IncomeCategory.fetchRequest())
             
         } catch {
             print("error \(error.localizedDescription)")
@@ -73,6 +75,8 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         if titleTextField.text?.isEmpty == false && notesTextField.text?.isEmpty == false && amountTextField.text?.isEmpty == false {
             if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
                 let transactionObject = Transaction(context: self.context)
+                let incomeCategory = IncomeCategory(context: self.context)
+                
                 transactionObject.isIncome = true
                 transactionObject.title = titleTextField.text
                 if let incomeAmount = Float(amountTextField.text!) {
@@ -137,6 +141,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                         print(list.dateAndTime!.formatted())
                         print(list.note!)
                         print(list.isIncome)
+                        print(list.category!)
                         print("-----------------------------------")
                         
                     }
@@ -161,15 +166,19 @@ extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return transactions?.count ?? 0
+        return incoCategory?.count ?? 0
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let list = transactions?[row]
-        return list!.title
+        let list = incoCategory?[row]
+        return list!.categoryName
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return true
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let list = incoCategory?[row]
+        print(list?.categoryName!)
     }
 }
 

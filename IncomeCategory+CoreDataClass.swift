@@ -2,7 +2,7 @@
 //  IncomeCategory+CoreDataClass.swift
 //  financially
 //
-//  Created by Sarath P on 09/12/21.
+//  Created by Sarath P on 10/12/21.
 //
 //
 

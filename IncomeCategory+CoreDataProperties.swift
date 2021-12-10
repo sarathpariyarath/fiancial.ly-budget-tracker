@@ -2,7 +2,7 @@
 //  IncomeCategory+CoreDataProperties.swift
 //  financially
 //
-//  Created by Sarath P on 09/12/21.
+//  Created by Sarath P on 10/12/21.
 //
 //
 
@@ -17,6 +17,24 @@ extension IncomeCategory {
     }
 
     @NSManaged public var categoryName: String?
+    @NSManaged public var transaction: NSSet?
+
+}
+
+// MARK: Generated accessors for transaction
+extension IncomeCategory {
+
+    @objc(addTransactionObject:)
+    @NSManaged public func addToTransaction(_ value: Transaction)
+
+    @objc(removeTransactionObject:)
+    @NSManaged public func removeFromTransaction(_ value: Transaction)
+
+    @objc(addTransaction:)
+    @NSManaged public func addToTransaction(_ values: NSSet)
+
+    @objc(removeTransaction:)
+    @NSManaged public func removeFromTransaction(_ values: NSSet)
 
 }
 

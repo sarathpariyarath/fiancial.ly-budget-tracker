@@ -2,7 +2,7 @@
 //  Transaction+CoreDataProperties.swift
 //  financially
 //
-//  Created by Sarath P on 09/12/21.
+//  Created by Sarath P on 10/12/21.
 //
 //
 
@@ -18,10 +18,13 @@ extension Transaction {
 
     @NSManaged public var amount: Float
     @NSManaged public var dateAndTime: Date?
+    @NSManaged public var image: Data?
     @NSManaged public var isIncome: Bool
     @NSManaged public var note: String?
     @NSManaged public var title: String?
-    @NSManaged public var image: Data?
+    @NSManaged public var category: String?
+    @NSManaged public var incomeCategory: IncomeCategory?
+    @NSManaged public var expenseCategory: ExpenseCategory?
 
 }
 

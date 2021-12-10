@@ -2,21 +2,26 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ExpenseCategory" representedClassName="ExpenseCategory" syncable="YES">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
+        <relationship name="transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="expenseCategory" inverseEntity="Transaction"/>
     </entity>
     <entity name="IncomeCategory" representedClassName="IncomeCategory" syncable="YES">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
+        <relationship name="transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="incomeCategory" inverseEntity="Transaction"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="dateAndTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="isIncome" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="expenseCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExpenseCategory" inverseName="transaction" inverseEntity="ExpenseCategory"/>
+        <relationship name="incomeCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IncomeCategory" inverseName="transaction" inverseEntity="IncomeCategory"/>
     </entity>
     <elements>
-        <element name="Transaction" positionX="-63" positionY="-18" width="128" height="119"/>
-        <element name="IncomeCategory" positionX="-9" positionY="81" width="128" height="44"/>
-        <element name="ExpenseCategory" positionX="-36" positionY="36" width="128" height="44"/>
+        <element name="ExpenseCategory" positionX="-382.8046875" positionY="-102.546875" width="128" height="73"/>
+        <element name="IncomeCategory" positionX="138.15625" positionY="-87.6640625" width="128" height="73"/>
+        <element name="Transaction" positionX="-178.08984375" positionY="-177.37890625" width="234.421875" height="178"/>
     </elements>
 </model>
