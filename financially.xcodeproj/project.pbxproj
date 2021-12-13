@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370673F5275DDBDC00A88228 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370673F4275DDBDC00A88228 /* CoreDataManager.swift */; };
+		371CC3CE27671AAA0079F851 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371CC3CD27671AAA0079F851 /* HomePageViewController.swift */; };
 		37983CAB27637175000FC4CE /* ExpenseCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */; };
 		37983CAC27637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA627637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift */; };
 		37983CAD27637175000FC4CE /* IncomeCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA727637175000FC4CE /* IncomeCategory+CoreDataClass.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		370673F4275DDBDC00A88228 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		371CC3CD27671AAA0079F851 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37983CA627637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		37983CA727637175000FC4CE /* IncomeCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IncomeCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				37B9A00B275B7200004210CD /* AddTransactionViewController.swift */,
+				371CC3CD27671AAA0079F851 /* HomePageViewController.swift */,
 				37B9A010275C9A69004210CD /* IncomeCategoryViewController.swift */,
 				37B9A012275C9D49004210CD /* ExpenseCategoryViewController.swift */,
 			);
@@ -200,6 +203,7 @@
 				37B99FF6275B50DB004210CD /* SceneDelegate.swift in Sources */,
 				37983CAC27637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift in Sources */,
 				37B9A00C275B7200004210CD /* AddTransactionViewController.swift in Sources */,
+				371CC3CE27671AAA0079F851 /* HomePageViewController.swift in Sources */,
 				37983CAE27637175000FC4CE /* IncomeCategory+CoreDataProperties.swift in Sources */,
 				37B9A013275C9D49004210CD /* ExpenseCategoryViewController.swift in Sources */,
 				370673F5275DDBDC00A88228 /* CoreDataManager.swift in Sources */,
