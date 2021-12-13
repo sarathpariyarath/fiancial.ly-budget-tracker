@@ -145,7 +145,9 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                         print(list.dateAndTime!.formatted())
                         print(list.note!)
                         print(list.isIncome)
-                        print(list.category!)
+                        if list.category != nil {
+                            print(list.category!)
+                        }
                         print("-----------------------------------")
                         
                     }

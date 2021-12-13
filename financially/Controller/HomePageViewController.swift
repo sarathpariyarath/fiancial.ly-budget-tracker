@@ -15,6 +15,10 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var transactionsTable: UITableView!
     var transactions: [Transaction]?
     let context = CoreDataManager.shared.persistentContainer.viewContext
+    override func viewWillAppear(_ animated: Bool) {
+        fetchTransactions()
+        transactionsTable.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         totalBalaceCard.layer.cornerRadius = 10
@@ -31,8 +35,6 @@ class HomePageViewController: UIViewController {
         
         do {
             self.transactions = try context.fetch(Transaction.fetchRequest())
-            transactionsTable.reloadData()
-            
         } catch {
             print("error \(error.localizedDescription)")
         }
@@ -71,8 +73,10 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.categoryLabel.text = list.category
         cell.dateLabel.text = list.dateAndTime?.formatted(date: .abbreviated, time: .omitted)
+        cell.layer.cornerRadius = 8
         return cell
     }
-    
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
