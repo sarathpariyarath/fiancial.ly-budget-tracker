@@ -20,7 +20,15 @@ class HomePageViewController: UIViewController {
         expenseTotalView.layer.cornerRadius = 10
     }
     
-
+    @IBAction func addNewExpenseClicked(_ sender: Any) {
+        let inside = self.storyboard?.instantiateViewController(withIdentifier: "AddTransactionViewControllerID") as! AddTransactionViewController
+        self.navigationController?.pushViewController(inside, animated: true)
+    }
+    
+    @IBAction func addNewCategoryClicked(_ sender: Any) {
+        let inside = (self.storyboard?.instantiateViewController(withIdentifier: "categoryTabBar"))!
+        self.navigationController?.pushViewController(inside, animated: true)
+    }
     /*
     // MARK: - Navigation
 

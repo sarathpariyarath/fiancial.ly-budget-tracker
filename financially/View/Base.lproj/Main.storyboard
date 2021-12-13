@@ -96,7 +96,7 @@
         <!--INCOME CATEGORIES-->
         <scene sceneID="8G8-UA-SgV">
             <objects>
-                <viewController id="9q6-98-OZ5" customClass="IncomeCategoryViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IncomeCategoryViewControllerID" id="9q6-98-OZ5" customClass="IncomeCategoryViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HIr-TW-jGA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,15 +180,15 @@
         <scene sceneID="0iO-Og-Jcf">
             <objects>
                 <viewController id="5QF-Dd-XPc" customClass="HomePageViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="aKv-sW-iFC">
+                    <view key="view" contentMode="scaleToFill" id="aKv-sW-iFC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfI-Fp-dWa" userLabel="totalBalaceCard">
-                                <rect key="frame" x="20" y="103" width="374" height="120"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfI-Fp-dWa" userLabel="totalBalaceCard">
+                                <rect key="frame" x="15" y="103" width="384" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-MY-vgf">
-                                        <rect key="frame" x="114.5" y="19.5" width="145" height="81"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-12" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-MY-vgf">
+                                        <rect key="frame" x="119.5" y="19.5" width="145" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T O T A L  B A L A N C E" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUf-pn-uAe">
                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="45"/>
@@ -226,11 +226,11 @@
                                     <constraint firstItem="mzl-MY-vgf" firstAttribute="centerY" secondItem="jfI-Fp-dWa" secondAttribute="centerY" id="ec3-Hc-Bmv"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AKj-vA-svB">
-                                <rect key="frame" x="20" y="228" width="384" height="110"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AKj-vA-svB">
+                                <rect key="frame" x="15" y="228" width="384" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxD-8e-azj">
-                                        <rect key="frame" x="0.0" y="0.0" width="173" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="110"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rg6-Uv-8Pg">
                                                 <rect key="frame" x="14" y="43" width="80" height="51.5"/>
@@ -266,20 +266,20 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Income Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="NXo-ze-YBl">
-                                                <rect key="frame" x="108" y="8" width="57" height="57"/>
+                                                <rect key="frame" x="105" y="8" width="57" height="57"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.26503314389999999" green="0.26503314389999999" blue="0.26503314389999999" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="173" id="6PR-Wx-ZI4"/>
+                                            <constraint firstAttribute="width" constant="170" id="6PR-Wx-ZI4"/>
                                             <constraint firstAttribute="trailing" secondItem="NXo-ze-YBl" secondAttribute="trailing" constant="8" id="P1f-vE-lB2"/>
                                             <constraint firstItem="Rg6-Uv-8Pg" firstAttribute="leading" secondItem="bxD-8e-azj" secondAttribute="leading" constant="14" id="W02-78-5Rk"/>
                                             <constraint firstItem="NXo-ze-YBl" firstAttribute="top" secondItem="bxD-8e-azj" secondAttribute="top" constant="8" id="cAc-bT-eFL"/>
                                             <constraint firstAttribute="bottom" secondItem="Rg6-Uv-8Pg" secondAttribute="bottom" constant="15.5" id="ds2-6z-ZAU"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7R-mo-a5v">
-                                        <rect key="frame" x="178" y="0.0" width="206" height="110"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7R-mo-a5v">
+                                        <rect key="frame" x="175" y="0.0" width="209" height="110"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-76-wjs">
                                                 <rect key="frame" x="14" y="43" width="80" height="51.5"/>
@@ -314,8 +314,8 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Expense arrow" translatesAutoresizingMaskIntoConstraints="NO" id="xSg-DZ-Jpg">
-                                                <rect key="frame" x="128" y="8" width="57" height="57"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Expense arrow" translatesAutoresizingMaskIntoConstraints="NO" id="xSg-DZ-Jpg">
+                                                <rect key="frame" x="144" y="8" width="57" height="57"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.26625631309999997" green="0.26625631309999997" blue="0.26625631309999997" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -332,15 +332,48 @@
                                     <constraint firstAttribute="height" constant="110" id="OcY-MC-Yau"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1E3-33-nhx">
+                                <rect key="frame" x="15" y="343" width="384" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJE-s8-k2k">
+                                        <rect key="frame" x="0.0" y="0.0" width="189.5" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="plus.circle" catalog="system" title="ADD NEW EXPENSE" imagePadding="5">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                            <color key="baseBackgroundColor" red="0.26625631309999997" green="0.26625631309999997" blue="0.26625631309999997" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addNewExpenseClicked:" destination="5QF-Dd-XPc" eventType="touchUpInside" id="Oje-nk-XGQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtx-Rc-BCc">
+                                        <rect key="frame" x="194.5" y="0.0" width="189.5" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="plus.circle" catalog="system" title="ADD NEW CATEGORY" imagePadding="5">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                            <color key="baseBackgroundColor" red="0.26625631309999997" green="0.26625631309999997" blue="0.26625631309999997" alpha="0.75638969369999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addNewCategoryClicked:" destination="5QF-Dd-XPc" eventType="touchUpInside" id="I4i-pu-5PH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NWn-kO-90b"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fU2-aD-19z"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fU2-aD-19z" firstAttribute="trailing" secondItem="jfI-Fp-dWa" secondAttribute="trailing" constant="15" id="6Mf-9R-d2G"/>
                             <constraint firstItem="jfI-Fp-dWa" firstAttribute="top" secondItem="fU2-aD-19z" secondAttribute="top" constant="15" id="78w-Xa-bQh"/>
+                            <constraint firstItem="1E3-33-nhx" firstAttribute="leading" secondItem="fU2-aD-19z" secondAttribute="leading" constant="15" id="GMi-8O-FU8"/>
+                            <constraint firstItem="1E3-33-nhx" firstAttribute="top" secondItem="AKj-vA-svB" secondAttribute="bottom" constant="5" id="YlN-hL-wjN"/>
                             <constraint firstItem="AKj-vA-svB" firstAttribute="leading" secondItem="fU2-aD-19z" secondAttribute="leading" constant="15" id="ZWB-W6-0ZR"/>
                             <constraint firstItem="fU2-aD-19z" firstAttribute="trailing" secondItem="AKj-vA-svB" secondAttribute="trailing" constant="15" id="hqE-U8-bD5"/>
                             <constraint firstItem="AKj-vA-svB" firstAttribute="top" secondItem="jfI-Fp-dWa" secondAttribute="bottom" constant="5" id="jmr-xZ-ZBd"/>
+                            <constraint firstItem="fU2-aD-19z" firstAttribute="trailing" secondItem="1E3-33-nhx" secondAttribute="trailing" constant="15" id="oP0-Sk-6AY"/>
                             <constraint firstItem="jfI-Fp-dWa" firstAttribute="leading" secondItem="fU2-aD-19z" secondAttribute="leading" constant="15" id="uA8-4G-CPS"/>
                         </constraints>
                     </view>
@@ -403,10 +436,10 @@
             </objects>
             <point key="canvasLocation" x="1692.753623188406" y="69.642857142857139"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Category Tab Bar Controller-->
         <scene sceneID="Dl1-tN-32A">
             <objects>
-                <tabBarController id="AHF-ZG-muH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="categoryTabBar" id="AHF-ZG-muH" customClass="categoryTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="v5x-ue-Dd9"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0KL-ZC-GON">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -425,7 +458,7 @@
         <!--Add Transaction View Controller-->
         <scene sceneID="ypt-xP-12w">
             <objects>
-                <viewController id="Nf3-fV-fAO" customClass="AddTransactionViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTransactionViewControllerID" id="Nf3-fV-fAO" customClass="AddTransactionViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6XE-0a-feU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -593,6 +626,7 @@
         <image name="chart.line.uptrend.xyaxis.circle.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="paperclip" catalog="system" width="121" height="128"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="rectangle.badge.minus" catalog="system" width="128" height="95"/>
         <image name="rectangle.badge.plus" catalog="system" width="128" height="95"/>
     </resources>
