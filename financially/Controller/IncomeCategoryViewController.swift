@@ -13,7 +13,6 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var incomeCategoryTable: UITableView! //table showing income categories
     
     var incoCategory: [IncomeCategory]?
-    var categoryItems = ["MacBook", "Food", "Party", "Petrol", "Car Loan", "EMI", "Biryani", "Clothes"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "INCOME CATEGORIES"

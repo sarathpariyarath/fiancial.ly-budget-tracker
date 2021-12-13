@@ -12,12 +12,20 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var totalBalaceCard: UIView!
     @IBOutlet weak var incomeTotalView: UIView!
     @IBOutlet weak var expenseTotalView: UIView!
+    @IBOutlet weak var expenseTotaltextField: UILabel!
+    @IBOutlet weak var totalBalanceTextField: UILabel!
+    @IBOutlet weak var incomeTotalTextField: UILabel!
     @IBOutlet weak var transactionsTable: UITableView!
     var transactions: [Transaction]?
     let context = CoreDataManager.shared.persistentContainer.viewContext
     override func viewWillAppear(_ animated: Bool) {
         fetchTransactions()
+        let incomeTotalFloat = Float(incomeTotal())
+        let expenseTotalFloat = Float(expenseTotal())
+        let totalBalance = incomeTotalFloat! - expenseTotalFloat!
+        totalBalanceTextField.text = String(totalBalance)
         transactionsTable.reloadData()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +37,40 @@ class HomePageViewController: UIViewController {
         transactionsTable.delegate = self
         transactionsTable.dataSource = self
         
+    }
+    func incomeTotal() -> String {
+        var total: Float = 0
+        for i in 0 ..< transactions!.count {
+            let list = transactions![i]
+            if list.isIncome == true {
+                
+                    total = total + list.amount
+                    print(total)
+            }
+            
+        }
+        var totalString: String {
+            return String(format: "%.1f", total)
+            }
+        self.incomeTotalTextField.text = totalString
+        return totalString
+    }
+    func expenseTotal() -> String {
+        var total: Float = 0
+        for i in 0 ..< transactions!.count {
+            let list = transactions![i]
+            if list.isIncome == false {
+                
+                    total = total + list.amount
+                    print(total)
+            }
+            
+        }
+        var totalString: String {
+            return String(format: "%.1f", total)
+            }
+        self.expenseTotaltextField.text = totalString
+      return totalString
     }
     func fetchTransactions() {
         
@@ -70,8 +112,14 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.amountLabel.text = "- ₹\(amount)"
             cell.amountLabel.textColor = .red
         }
+        if list.category == nil {
+            cell.categoryLabel.text = "-nil"
+            cell.categoryLabel.textColor = .red
+        } else {
+            cell.categoryLabel.text = list.category
+        }
         
-        cell.categoryLabel.text = list.category
+        
         cell.dateLabel.text = list.dateAndTime?.formatted(date: .abbreviated, time: .omitted)
         cell.layer.cornerRadius = 8
         return cell
