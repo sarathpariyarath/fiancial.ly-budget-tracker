@@ -60,27 +60,35 @@ extension ExpenseCategoryViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
             print("Delete Action Tapped")
-            let category = self.expenseCategory?[indexPath.row]
-            self.context.delete(category!)
-            
-            do {
-                try self.context.save()
+            let alert = UIAlertController.init(title: "Delete", message: "Confirm to delete this category", preferredStyle: .alert)
+            let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+                let category = self.expenseCategory?[indexPath.row]
+                self.context.delete(category!)
                 
-            } catch{}
-            //refetch the data
-            
-            self.fetchExpenseTransactions()
-            self.expenseCategoryTable.reloadData()
-            for i in 0 ..< self.expenseCategory!.count {
-                let list = self.expenseCategory![i]
-                print(list.categoryName!)
-                   
+                do {
+                    try self.context.save()
+                    
+                } catch{}
+                //refetch the data
+                
+                self.fetchExpenseTransactions()
+                self.expenseCategoryTable.reloadData()
+                for i in 0 ..< self.expenseCategory!.count {
+                    let list = self.expenseCategory![i]
+                    print(list.categoryName!)
+                    
                     
                 }
-                }
-                deleteAction.backgroundColor = .red
-                let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-                return configuration
+            }
+            let cancelButton = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alert.addAction(deleteButton)
+            alert.addAction(cancelButton)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        deleteAction.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         expenseCategoryTextField.endEditing(true)

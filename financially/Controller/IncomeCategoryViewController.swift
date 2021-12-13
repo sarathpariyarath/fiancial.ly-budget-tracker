@@ -65,23 +65,31 @@ extension IncomeCategoryViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
             print("Delete Action Tapped")
-            let category = self.incoCategory?[indexPath.row]
-            self.context.delete(category!)
+            let alert = UIAlertController.init(title: "Delete", message: "Confirm to delete category", preferredStyle: .alert)
             
-            do {
-                try self.context.save()
+            let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+                let category = self.incoCategory?[indexPath.row]
+                self.context.delete(category!)
                 
-            } catch{}
-            //refetch the data
-            
-            self.fetchIncomeTransactions()
-            self.incomeCategoryTable.reloadData()
-            for i in 0 ..< self.incoCategory!.count {
-                let list = self.incoCategory![i]
-                print(list.categoryName!)
-                   
+                do {
+                    try self.context.save()
                     
-                }
+                } catch{}
+                //refetch the data
+                
+                self.fetchIncomeTransactions()
+                self.incomeCategoryTable.reloadData()
+                for i in 0 ..< self.incoCategory!.count {
+                    let list = self.incoCategory![i]
+                    print(list.categoryName!)
+                       
+                        
+                    }
+            }
+            let cancelButton = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alert.addAction(deleteButton)
+            alert.addAction(cancelButton)
+            self.present(alert, animated: true, completion: nil)
             
         }
         deleteAction.backgroundColor = .red
