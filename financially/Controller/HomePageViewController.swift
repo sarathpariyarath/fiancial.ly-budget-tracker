@@ -12,12 +12,30 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var totalBalaceCard: UIView!
     @IBOutlet weak var incomeTotalView: UIView!
     @IBOutlet weak var expenseTotalView: UIView!
-    
+    @IBOutlet weak var transactionsTable: UITableView!
+    var transactions: [Transaction]?
+    let context = CoreDataManager.shared.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
         totalBalaceCard.layer.cornerRadius = 10
         incomeTotalView.layer.cornerRadius = 10
         expenseTotalView.layer.cornerRadius = 10
+        fetchTransactions()
+        transactionsTable.reloadData()
+        transactionsTable.delegate = self
+        transactionsTable.dataSource = self
+        
+    }
+    func fetchTransactions() {
+        
+        
+        do {
+            self.transactions = try context.fetch(Transaction.fetchRequest())
+            transactionsTable.reloadData()
+            
+        } catch {
+            print("error \(error.localizedDescription)")
+        }
     }
     
     @IBAction func addNewExpenseClicked(_ sender: Any) {
@@ -29,14 +47,32 @@ class HomePageViewController: UIViewController {
         let inside = (self.storyboard?.instantiateViewController(withIdentifier: "categoryTabBar"))!
         self.navigationController?.pushViewController(inside, animated: true)
     }
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transactions?.count ?? 0
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath) as! TransactionTableViewCell
+        let list = transactions![indexPath.row]
+        cell.titleLabel.text = list.title
+        var amount: String {
+            return String(format: "%.1f", list.amount)
+            }
+        if list.isIncome == true {
+            cell.amountLabel.text = "+ ₹\(amount)"
+        } else {
+            cell.amountLabel.text = "- ₹\(amount)"
+            cell.amountLabel.textColor = .red
+        }
+        
+        cell.categoryLabel.text = list.category
+        cell.dateLabel.text = list.dateAndTime?.formatted(date: .abbreviated, time: .omitted)
+        return cell
+    }
+    
+    
 }

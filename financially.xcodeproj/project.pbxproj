@@ -15,6 +15,7 @@
 		37983CAE27637175000FC4CE /* IncomeCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA827637175000FC4CE /* IncomeCategory+CoreDataProperties.swift */; };
 		37983CAF27637175000FC4CE /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA927637175000FC4CE /* Transaction+CoreDataClass.swift */; };
 		37983CB027637175000FC4CE /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CAA27637175000FC4CE /* Transaction+CoreDataProperties.swift */; };
+		3799D46827676B6900CA6CFB /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799D46727676B6800CA6CFB /* TransactionTableViewCell.swift */; };
 		37B99FF4275B50DB004210CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B99FF3275B50DB004210CD /* AppDelegate.swift */; };
 		37B99FF6275B50DB004210CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B99FF5275B50DB004210CD /* SceneDelegate.swift */; };
 		37B99FFB275B50DB004210CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B99FF9275B50DB004210CD /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		37983CA827637175000FC4CE /* IncomeCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IncomeCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		37983CA927637175000FC4CE /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37983CAA27637175000FC4CE /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3799D46727676B6800CA6CFB /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		37B99FF0275B50DB004210CD /* financially.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = financially.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B99FF3275B50DB004210CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37B99FF5275B50DB004210CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				37B9A00B275B7200004210CD /* AddTransactionViewController.swift */,
 				371CC3CD27671AAA0079F851 /* HomePageViewController.swift */,
+				3799D46727676B6800CA6CFB /* TransactionTableViewCell.swift */,
 				37B9A010275C9A69004210CD /* IncomeCategoryViewController.swift */,
 				37B9A012275C9D49004210CD /* ExpenseCategoryViewController.swift */,
 			);
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37983CAB27637175000FC4CE /* ExpenseCategory+CoreDataClass.swift in Sources */,
+				3799D46827676B6900CA6CFB /* TransactionTableViewCell.swift in Sources */,
 				37B99FF4275B50DB004210CD /* AppDelegate.swift in Sources */,
 				37983CAD27637175000FC4CE /* IncomeCategory+CoreDataClass.swift in Sources */,
 				37B99FFE275B50DB004210CD /* financially.xcdatamodeld in Sources */,

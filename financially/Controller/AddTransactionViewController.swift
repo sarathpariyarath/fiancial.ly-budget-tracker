@@ -152,7 +152,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                   
                 }
             }
-            self.navigationController?.popToRootViewController(animated: true)
+           
         } else {
             let alert = UIAlertController(title: "Fill all fields", message: "Please provide correct details", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
