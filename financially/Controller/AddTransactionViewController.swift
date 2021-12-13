@@ -20,6 +20,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var userTransactionImage: UIImageView!
     @IBOutlet weak var categoryPicker: UIPickerView!
+    var pickerSelection: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +34,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         fetchTransactions()
         categoryPicker.selectRow((transactions!.count/2), inComponent: 0, animated: true)
     }
-    // Function to clear all textfields
+    // Function to clear all textfields after end editing
     func clearTextField() {
         titleTextField.text = ""
         amountTextField.text = ""
@@ -75,7 +76,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         if titleTextField.text?.isEmpty == false && notesTextField.text?.isEmpty == false && amountTextField.text?.isEmpty == false {
             if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
                 let transactionObject = Transaction(context: self.context)
-                let incomeCategory = IncomeCategory(context: self.context)
+//                let incomeCategory = IncomeCategory(context: self.context)
                 
                 transactionObject.isIncome = true
                 transactionObject.title = titleTextField.text
@@ -88,6 +89,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                 
                 transactionObject.note = notesTextField.text
                 transactionObject.dateAndTime = dateAndTimePicker.date
+                transactionObject.category = pickerSelection
                 clearTextField()
                 do {
                     try self.context.save()
@@ -106,8 +108,10 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                         if list.image != nil {
                             print(list.image!)
                         }
+                        if list.category != nil {
+                            print(list.category!)
+                        }
                         print("-----------------------------------")
-                       
                         
                         
                     }
@@ -178,7 +182,9 @@ extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let list = incoCategory?[row]
-        print(list?.categoryName!)
+        print(list!)
+        print(list!.categoryName!)
+        pickerSelection = list?.categoryName
     }
 }
 

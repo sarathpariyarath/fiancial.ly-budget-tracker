@@ -60,6 +60,12 @@
 		370673F6275DDC3000A88228 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */,
+				37983CA627637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift */,
+				37983CA727637175000FC4CE /* IncomeCategory+CoreDataClass.swift */,
+				37983CA827637175000FC4CE /* IncomeCategory+CoreDataProperties.swift */,
+				37983CA927637175000FC4CE /* Transaction+CoreDataClass.swift */,
+				37983CAA27637175000FC4CE /* Transaction+CoreDataProperties.swift */,
 				370673F4275DDBDC00A88228 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
@@ -68,12 +74,6 @@
 		37B99FE7275B50DB004210CD = {
 			isa = PBXGroup;
 			children = (
-				37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */,
-				37983CA627637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift */,
-				37983CA727637175000FC4CE /* IncomeCategory+CoreDataClass.swift */,
-				37983CA827637175000FC4CE /* IncomeCategory+CoreDataProperties.swift */,
-				37983CA927637175000FC4CE /* Transaction+CoreDataClass.swift */,
-				37983CAA27637175000FC4CE /* Transaction+CoreDataProperties.swift */,
 				37B99FF2275B50DB004210CD /* financially */,
 				37B99FF1275B50DB004210CD /* Products */,
 			);
