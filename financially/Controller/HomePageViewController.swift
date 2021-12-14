@@ -29,6 +29,7 @@ class HomePageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         totalBalaceCard.layer.cornerRadius = 10
         incomeTotalView.layer.cornerRadius = 10
         expenseTotalView.layer.cornerRadius = 10
@@ -101,7 +102,8 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath) as! TransactionTableViewCell
-        let list = transactions![indexPath.row]
+        let reversedTransactions: [Transaction] = Array(transactions!.reversed())
+        let list = reversedTransactions[indexPath.row]
         cell.titleLabel.text = list.title
         var amount: String {
             return String(format: "%.1f", list.amount)
