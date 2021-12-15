@@ -9,6 +9,8 @@ import UIKit
 import Charts
 
 class IncomePieViewController: UIViewController, ChartViewDelegate {
+    
+    @IBOutlet weak var incomeTransactionTable: UITableView!
     var pieChart = PieChartView()
     @IBOutlet weak var pieChartView: UIView!
     var transactions: [Transaction]?
@@ -16,6 +18,8 @@ class IncomePieViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
+        incomeTransactionTable.delegate = self
+        incomeTransactionTable.dataSource = self
         fetchTransactions()
     }
     func fetchTransactions() {
@@ -51,3 +55,38 @@ class IncomePieViewController: UIViewController, ChartViewDelegate {
     
 }
 
+extension IncomePieViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        transactions?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "incomeOverviewCell", for: indexPath) as! IncomeOverviewTableViewCell
+        let reversedTransactions: [Transaction] = Array(transactions!.reversed())
+        let list = reversedTransactions[indexPath.row]
+            cell.transactionTitle.text = list.title
+            var amount: String {
+                return String(format: "%.1f", list.amount)
+                }
+
+                cell.transactionAmount.text = "+ ₹\(amount)"
+
+            if list.category == nil {
+                cell.transactionCategory.text = "-nil"
+                cell.transactionCategory.textColor = .red
+            } else {
+                cell.transactionCategory.text = list.category
+            }
+            
+            
+            cell.transactionDate.text = list.dateAndTime?.formatted(date: .abbreviated, time: .omitted)
+            cell.layer.cornerRadius = 8
+        
+       
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+}

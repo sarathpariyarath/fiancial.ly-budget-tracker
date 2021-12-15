@@ -542,16 +542,95 @@
         <!--EXPENSE-->
         <scene sceneID="nqC-UI-4Pr">
             <objects>
-                <viewController id="aJa-C4-qfb" sceneMemberID="viewController">
+                <viewController id="aJa-C4-qfb" customClass="ExpenseViewController" customModule="financially" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8LH-Zg-Mgk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAE-W0-9Ow">
+                                <rect key="frame" x="0.0" y="88" width="414" height="388"/>
+                                <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="388" id="xw2-ir-xbA"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oyL-5B-GHi">
+                                <rect key="frame" x="10" y="484" width="394" height="329"/>
+                                <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseOverviewCell" rowHeight="84" id="cUj-PK-rzU" customClass="IncomeOverviewTableViewCell" customModule="financially" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cUj-PK-rzU" id="Bxg-yb-YAl">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQG-gr-yoz">
+                                                    <rect key="frame" x="20" y="36" width="50" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ ₹2000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvq-K3-cCy">
+                                                    <rect key="frame" x="276.5" y="11" width="97.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 NOV, 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHJ-gD-wju">
+                                                    <rect key="frame" x="288.5" y="34" width="85.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr9-vs-5YE">
+                                                    <rect key="frame" x="20" y="11" width="69.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="pvq-K3-cCy" firstAttribute="trailing" secondItem="Bxg-yb-YAl" secondAttribute="trailingMargin" id="7zK-OK-C2t"/>
+                                                <constraint firstItem="MHJ-gD-wju" firstAttribute="top" secondItem="pvq-K3-cCy" secondAttribute="bottom" constant="1.5" id="Eag-Qq-trc"/>
+                                                <constraint firstItem="MHJ-gD-wju" firstAttribute="trailing" secondItem="Bxg-yb-YAl" secondAttribute="trailingMargin" id="HHD-aq-Cja"/>
+                                                <constraint firstItem="pvq-K3-cCy" firstAttribute="top" secondItem="Bxg-yb-YAl" secondAttribute="topMargin" id="OpT-aM-UD0"/>
+                                                <constraint firstItem="MQG-gr-yoz" firstAttribute="leading" secondItem="Bxg-yb-YAl" secondAttribute="leadingMargin" id="Phs-tZ-Ev1"/>
+                                                <constraint firstItem="Tr9-vs-5YE" firstAttribute="leading" secondItem="Bxg-yb-YAl" secondAttribute="leadingMargin" id="g4H-4F-E58"/>
+                                                <constraint firstItem="Tr9-vs-5YE" firstAttribute="top" secondItem="Bxg-yb-YAl" secondAttribute="topMargin" id="iE4-pz-9Gp"/>
+                                                <constraint firstItem="MQG-gr-yoz" firstAttribute="top" secondItem="Tr9-vs-5YE" secondAttribute="bottom" constant="4.5" id="n6F-5k-NkA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="transactionAmount" destination="pvq-K3-cCy" id="fB9-zL-REl"/>
+                                            <outlet property="transactionCategory" destination="MQG-gr-yoz" id="6zz-56-dya"/>
+                                            <outlet property="transactionDate" destination="MHJ-gD-wju" id="srx-Tq-dNj"/>
+                                            <outlet property="transactionTitle" destination="Tr9-vs-5YE" id="bjh-D9-gVg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DhC-r4-fyx"/>
                         <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oyL-5B-GHi" firstAttribute="top" secondItem="OAE-W0-9Ow" secondAttribute="bottom" constant="8" symbolic="YES" id="4J7-Ky-cBw"/>
+                            <constraint firstItem="OAE-W0-9Ow" firstAttribute="top" secondItem="DhC-r4-fyx" secondAttribute="top" id="J1d-dM-AWI"/>
+                            <constraint firstItem="oyL-5B-GHi" firstAttribute="bottom" secondItem="DhC-r4-fyx" secondAttribute="bottom" id="M8q-wf-bXH"/>
+                            <constraint firstItem="OAE-W0-9Ow" firstAttribute="trailing" secondItem="DhC-r4-fyx" secondAttribute="trailing" id="R8Y-OD-bhy"/>
+                            <constraint firstItem="oyL-5B-GHi" firstAttribute="leading" secondItem="DhC-r4-fyx" secondAttribute="leading" constant="10" id="pDX-vF-wGa"/>
+                            <constraint firstItem="OAE-W0-9Ow" firstAttribute="leading" secondItem="DhC-r4-fyx" secondAttribute="leading" id="tLb-FG-8oq"/>
+                            <constraint firstItem="DhC-r4-fyx" firstAttribute="trailing" secondItem="oyL-5B-GHi" secondAttribute="trailing" constant="10" id="ydG-qB-rFI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="EXPENSE" id="WW5-7b-AEi">
                         <imageReference key="image" image="square.and.arrow.up.fill" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="expenseCategoryTable" destination="oyL-5B-GHi" id="oXQ-Sp-LkN"/>
+                        <outlet property="pieChartView" destination="OAE-W0-9Ow" id="afv-Fh-6Km"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1t-9v-oy1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -574,9 +653,9 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nds-nK-Edm">
                                 <rect key="frame" x="10" y="484" width="394" height="329"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="incomeOverviewCell" rowHeight="84" id="Tvh-K8-sPx" customClass="TransactionTableViewCell" customModule="financially" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="incomeOverviewCell" rowHeight="84" id="Tvh-K8-sPx" customClass="IncomeOverviewTableViewCell" customModule="financially" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="394" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tvh-K8-sPx" id="17F-dL-g7d">
@@ -608,6 +687,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="3SQ-Ph-KFQ" firstAttribute="top" secondItem="94k-kq-6cn" secondAttribute="bottom" constant="1.5" id="G2E-4e-RJB"/>
                                                 <constraint firstItem="OHz-EK-Zw2" firstAttribute="leading" secondItem="17F-dL-g7d" secondAttribute="leadingMargin" id="K76-wQ-I0y"/>
@@ -620,10 +700,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amountLabel" destination="94k-kq-6cn" id="hIg-OC-vpX"/>
-                                            <outlet property="categoryLabel" destination="nMB-sf-JVa" id="CPw-og-hFi"/>
-                                            <outlet property="dateLabel" destination="3SQ-Ph-KFQ" id="Z1w-Pt-h8i"/>
-                                            <outlet property="titleLabel" destination="OHz-EK-Zw2" id="bei-N3-IAH"/>
+                                            <outlet property="transactionAmount" destination="94k-kq-6cn" id="Rgk-d6-ZfV"/>
+                                            <outlet property="transactionCategory" destination="nMB-sf-JVa" id="fha-Vi-Tg9"/>
+                                            <outlet property="transactionDate" destination="3SQ-Ph-KFQ" id="I5b-2u-tdK"/>
+                                            <outlet property="transactionTitle" destination="OHz-EK-Zw2" id="UWu-nV-wka"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -646,6 +726,7 @@
                         <imageReference key="image" image="square.and.arrow.down.fill" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="incomeTransactionTable" destination="Nds-nK-Edm" id="XaV-MV-zuI"/>
                         <outlet property="pieChartView" destination="GfB-dR-dYb" id="hlG-1S-Fmm"/>
                     </connections>
                 </viewController>
