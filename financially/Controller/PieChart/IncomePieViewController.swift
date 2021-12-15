@@ -10,6 +10,7 @@ import Charts
 
 class IncomePieViewController: UIViewController, ChartViewDelegate {
     var pieChart = PieChartView()
+    @IBOutlet weak var pieChartView: UIView!
     var transactions: [Transaction]?
     let context = CoreDataManager.shared.persistentContainer.viewContext
     override func viewDidLoad() {
@@ -28,16 +29,17 @@ class IncomePieViewController: UIViewController, ChartViewDelegate {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        pieChart.chartDescription?.textColor = .white
+        pieChart.transparentCircleColor = .red
         pieChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
-        pieChart.center = view.center
+        pieChart.center = pieChartView.center
         view.addSubview(pieChart)
         var entries = [ChartDataEntry]()
         for x in 0..<transactions!.count {
             let list = transactions![x]
             if list.isIncome == true {
-                entries.append(ChartDataEntry(x: Double(list.amount), y: Double(list.amount)))
-                let set = PieChartDataSet(entries: entries, label: list.title)
+                entries.append(PieChartDataEntry(value: Double(list.amount), label: list.title))
+                let set = PieChartDataSet(entries: entries, label: " ")
                 set.colors = ChartColorTemplates.colorful()
                 let data = PieChartData(dataSet: set)
                 pieChart.data = data

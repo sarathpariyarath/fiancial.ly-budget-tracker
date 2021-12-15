@@ -564,16 +564,94 @@
                     <view key="view" contentMode="scaleToFill" id="uWf-fx-hqi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-dR-dYb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="388"/>
+                                <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="388" id="NOx-mK-d4B"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nds-nK-Edm">
+                                <rect key="frame" x="10" y="484" width="394" height="329"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="incomeOverviewCell" rowHeight="84" id="Tvh-K8-sPx" customClass="TransactionTableViewCell" customModule="financially" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tvh-K8-sPx" id="17F-dL-g7d">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMB-sf-JVa">
+                                                    <rect key="frame" x="20" y="36" width="50" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ ₹2000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94k-kq-6cn">
+                                                    <rect key="frame" x="276.5" y="11" width="97.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" systemColor="systemGreenColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 NOV, 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SQ-Ph-KFQ">
+                                                    <rect key="frame" x="288.5" y="34" width="85.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHz-EK-Zw2">
+                                                    <rect key="frame" x="20" y="11" width="69.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3SQ-Ph-KFQ" firstAttribute="top" secondItem="94k-kq-6cn" secondAttribute="bottom" constant="1.5" id="G2E-4e-RJB"/>
+                                                <constraint firstItem="OHz-EK-Zw2" firstAttribute="leading" secondItem="17F-dL-g7d" secondAttribute="leadingMargin" id="K76-wQ-I0y"/>
+                                                <constraint firstItem="94k-kq-6cn" firstAttribute="trailing" secondItem="17F-dL-g7d" secondAttribute="trailingMargin" id="bTs-zT-KDi"/>
+                                                <constraint firstItem="OHz-EK-Zw2" firstAttribute="top" secondItem="17F-dL-g7d" secondAttribute="topMargin" id="kkx-zj-RDN"/>
+                                                <constraint firstItem="nMB-sf-JVa" firstAttribute="top" secondItem="OHz-EK-Zw2" secondAttribute="bottom" constant="4.5" id="kwg-Pw-y8s"/>
+                                                <constraint firstItem="nMB-sf-JVa" firstAttribute="leading" secondItem="17F-dL-g7d" secondAttribute="leadingMargin" id="n4F-XQ-ggF"/>
+                                                <constraint firstItem="3SQ-Ph-KFQ" firstAttribute="trailing" secondItem="17F-dL-g7d" secondAttribute="trailingMargin" id="pdt-MQ-7o9"/>
+                                                <constraint firstItem="94k-kq-6cn" firstAttribute="top" secondItem="17F-dL-g7d" secondAttribute="topMargin" id="x8C-ri-ki6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="94k-kq-6cn" id="hIg-OC-vpX"/>
+                                            <outlet property="categoryLabel" destination="nMB-sf-JVa" id="CPw-og-hFi"/>
+                                            <outlet property="dateLabel" destination="3SQ-Ph-KFQ" id="Z1w-Pt-h8i"/>
+                                            <outlet property="titleLabel" destination="OHz-EK-Zw2" id="bei-N3-IAH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0Te-JS-2lF"/>
                         <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nds-nK-Edm" firstAttribute="top" secondItem="GfB-dR-dYb" secondAttribute="bottom" constant="8" symbolic="YES" id="QGr-nB-Tqr"/>
+                            <constraint firstItem="0Te-JS-2lF" firstAttribute="trailing" secondItem="Nds-nK-Edm" secondAttribute="trailing" constant="10" id="USa-aO-OOK"/>
+                            <constraint firstItem="Nds-nK-Edm" firstAttribute="leading" secondItem="0Te-JS-2lF" secondAttribute="leading" constant="10" id="Umb-Rn-yzm"/>
+                            <constraint firstItem="GfB-dR-dYb" firstAttribute="top" secondItem="0Te-JS-2lF" secondAttribute="top" id="UxZ-nn-j6s"/>
+                            <constraint firstItem="Nds-nK-Edm" firstAttribute="bottom" secondItem="0Te-JS-2lF" secondAttribute="bottom" id="amw-za-iXV"/>
+                            <constraint firstItem="GfB-dR-dYb" firstAttribute="leading" secondItem="0Te-JS-2lF" secondAttribute="leading" id="hGX-Wz-hGg"/>
+                            <constraint firstItem="GfB-dR-dYb" firstAttribute="centerX" secondItem="uWf-fx-hqi" secondAttribute="centerX" id="ieS-Ct-TaU"/>
+                            <constraint firstItem="0Te-JS-2lF" firstAttribute="trailing" secondItem="GfB-dR-dYb" secondAttribute="trailing" id="pWH-hx-Qgb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="INCOME" id="g0W-P0-5X4">
                         <imageReference key="image" image="square.and.arrow.down.fill" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="pieChartView" destination="GfB-dR-dYb" id="hlG-1S-Fmm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ygd-Pz-OJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5661" y="-1553"/>
+            <point key="canvasLocation" x="5660.8695652173919" y="-1553.5714285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a53-JM-cIX">
