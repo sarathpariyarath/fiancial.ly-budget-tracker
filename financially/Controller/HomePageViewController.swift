@@ -115,8 +115,7 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
             cell.amountLabel.textColor = .red
         }
         if list.category == nil {
-            cell.categoryLabel.text = "-nil"
-            cell.categoryLabel.textColor = .red
+            cell.categoryLabel.text = "-"
         } else {
             cell.categoryLabel.text = list.category
         }

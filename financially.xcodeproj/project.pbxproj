@@ -10,6 +10,7 @@
 		370673F5275DDBDC00A88228 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370673F4275DDBDC00A88228 /* CoreDataManager.swift */; };
 		37161D452769A52C000429E1 /* IncomeOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37161D442769A52C000429E1 /* IncomeOverviewTableViewCell.swift */; };
 		37161D472769A9A8000429E1 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37161D462769A9A8000429E1 /* ExpenseViewController.swift */; };
+		37161D492769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37161D482769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift */; };
 		371CC3CE27671AAA0079F851 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371CC3CD27671AAA0079F851 /* HomePageViewController.swift */; };
 		37983CAB27637175000FC4CE /* ExpenseCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */; };
 		37983CAC27637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA627637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift */; };
@@ -37,6 +38,7 @@
 		370673F4275DDBDC00A88228 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		37161D442769A52C000429E1 /* IncomeOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		37161D462769A9A8000429E1 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		37161D482769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		371CC3CD27671AAA0079F851 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		37983CA627637175000FC4CE /* ExpenseCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				3799D46F2768BCAB00CA6CFB /* IncomePieViewController.swift */,
 				37161D462769A9A8000429E1 /* ExpenseViewController.swift */,
 				37161D442769A52C000429E1 /* IncomeOverviewTableViewCell.swift */,
+				37161D482769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift */,
 			);
 			path = PieChart;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				370673F5275DDBDC00A88228 /* CoreDataManager.swift in Sources */,
 				37B9A011275C9A69004210CD /* IncomeCategoryViewController.swift in Sources */,
 				37161D472769A9A8000429E1 /* ExpenseViewController.swift in Sources */,
+				37161D492769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift in Sources */,
 				3799D46A2768650800CA6CFB /* OverViewController.swift in Sources */,
 				37983CB027637175000FC4CE /* Transaction+CoreDataProperties.swift in Sources */,
 			);

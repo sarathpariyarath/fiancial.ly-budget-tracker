@@ -72,8 +72,7 @@ extension IncomePieViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.transactionAmount.text = "+ ₹\(amount)"
 
             if list.category == nil {
-                cell.transactionCategory.text = "-nil"
-                cell.transactionCategory.textColor = .red
+                cell.transactionCategory.text = "-"
             } else {
                 cell.transactionCategory.text = list.category
             }

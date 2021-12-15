@@ -558,7 +558,7 @@
                                 <rect key="frame" x="10" y="484" width="394" height="329"/>
                                 <color key="backgroundColor" red="0.19803759460000001" green="0.19803759460000001" blue="0.19803759460000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseOverviewCell" rowHeight="84" id="cUj-PK-rzU" customClass="IncomeOverviewTableViewCell" customModule="financially" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseOverViewCell" rowHeight="84" id="cUj-PK-rzU" customClass="ExpenseOverviewTableViewCell" customModule="financially" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="394" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cUj-PK-rzU" id="Bxg-yb-YAl">
@@ -603,10 +603,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="transactionAmount" destination="pvq-K3-cCy" id="fB9-zL-REl"/>
-                                            <outlet property="transactionCategory" destination="MQG-gr-yoz" id="6zz-56-dya"/>
-                                            <outlet property="transactionDate" destination="MHJ-gD-wju" id="srx-Tq-dNj"/>
-                                            <outlet property="transactionTitle" destination="Tr9-vs-5YE" id="bjh-D9-gVg"/>
+                                            <outlet property="transactionAmount" destination="pvq-K3-cCy" id="eNd-kB-axI"/>
+                                            <outlet property="transactionCategory" destination="MQG-gr-yoz" id="C7N-tI-dJT"/>
+                                            <outlet property="transactionDate" destination="MHJ-gD-wju" id="Sqa-gp-v3i"/>
+                                            <outlet property="transactionTitle" destination="Tr9-vs-5YE" id="02A-yI-y8l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -629,6 +629,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="expenseCategoryTable" destination="oyL-5B-GHi" id="oXQ-Sp-LkN"/>
+                        <outlet property="expenseTransactionTable" destination="oyL-5B-GHi" id="Ptw-Mu-CrE"/>
                         <outlet property="pieChartView" destination="OAE-W0-9Ow" id="afv-Fh-6Km"/>
                     </connections>
                 </viewController>
