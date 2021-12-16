@@ -20,10 +20,8 @@ class HomePageViewController: UIViewController {
     let context = CoreDataManager.shared.persistentContainer.viewContext
     override func viewWillAppear(_ animated: Bool) {
         fetchTransactions()
-        let incomeTotalFloat = Float(incomeTotal())
-        let expenseTotalFloat = Float(expenseTotal())
-        let totalBalance = incomeTotalFloat! - expenseTotalFloat!
-        totalBalanceTextField.text = String(totalBalance)
+        reloadBalanceCards()
+       
         transactionsTable.reloadData()
         
     }
@@ -92,7 +90,12 @@ class HomePageViewController: UIViewController {
         let inside = (self.storyboard?.instantiateViewController(withIdentifier: "categoryTabBar"))!
         self.navigationController?.pushViewController(inside, animated: true)
     }
-    
+    func reloadBalanceCards() {
+        let incomeTotalFloat = Float(incomeTotal())
+        let expenseTotalFloat = Float(expenseTotal())
+        let totalBalance = incomeTotalFloat! - expenseTotalFloat!
+        totalBalanceTextField.text = String(totalBalance)
+    }
 
 }
 extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -127,5 +130,43 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, handler) in
+            print("Delete Action Tapped")
+            let alert = UIAlertController.init(title: "Delete", message: "Confirm to delete this transaction", preferredStyle: .alert)
+            
+            let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+                let reversedTransactions: [Transaction] = Array(self.transactions!.reversed())
+                let transactionSelected = reversedTransactions[indexPath.row]
+                self.context.delete(transactionSelected)
+                
+                
+                do {
+                    try self.context.save()
+                    
+                    
+                } catch{}
+                //refetch the data
+                
+                self.fetchTransactions()
+                self.transactionsTable.reloadData()
+                self.reloadBalanceCards()
+                for i in 0 ..< self.transactions!.count {
+                    let list = self.transactions![i]
+                    print(list)
+                       
+                        
+                    }
+            }
+            let cancelButton = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alert.addAction(deleteButton)
+            alert.addAction(cancelButton)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        deleteAction.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
 }
