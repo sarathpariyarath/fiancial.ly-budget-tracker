@@ -7,7 +7,7 @@
 
 import UIKit
 import Charts
-class ExpenseViewController: UIViewController, ChartViewDelegate {
+class ExpensePieChartViewController: UIViewController, ChartViewDelegate {
     var pieChart = PieChartView()
     var transactions: [Transaction]?
     @IBOutlet weak var expenseTransactionTable: UITableView!
@@ -55,7 +55,7 @@ class ExpenseViewController: UIViewController, ChartViewDelegate {
 
 }
 
-extension ExpenseViewController: UITableViewDelegate, UITableViewDataSource {
+extension ExpensePieChartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         transactions?.count ?? 0
     }
