@@ -9,6 +9,7 @@ import UIKit
 
 class OverViewController: UIViewController {
 
+    @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var totalBalanceCard: UIView!
     @IBOutlet weak var totalBalanceTextField: UILabel!
     @IBOutlet weak var totalIncome: UILabel!
@@ -25,10 +26,12 @@ class OverViewController: UIViewController {
         let totalBalance = incomeTotalFloat! - expenseTotalFloat!
         totalBalanceTextField.text = String(totalBalance)
         transactionsTable.reloadData()
-        
+        bgImage.layer.cornerRadius = 30
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
         totalBalanceCard.layer.cornerRadius = 10
         incomeCard.layer.cornerRadius = 10
         expenseCard.layer.cornerRadius = 10

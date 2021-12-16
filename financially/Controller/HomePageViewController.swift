@@ -9,6 +9,8 @@ import UIKit
 
 class HomePageViewController: UIViewController {
 
+    @IBOutlet weak var backgroundImg: UIImageView!
+
     @IBOutlet weak var totalBalaceCard: UIView!
     @IBOutlet weak var incomeTotalView: UIView!
     @IBOutlet weak var expenseTotalView: UIView!
@@ -31,6 +33,7 @@ class HomePageViewController: UIViewController {
         totalBalaceCard.layer.cornerRadius = 10
         incomeTotalView.layer.cornerRadius = 10
         expenseTotalView.layer.cornerRadius = 10
+        backgroundImg.layer.cornerRadius = 30
         fetchTransactions()
         transactionsTable.reloadData()
         transactionsTable.delegate = self
@@ -167,6 +170,7 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         deleteAction.backgroundColor = .red
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+
         return configuration
     }
 }
