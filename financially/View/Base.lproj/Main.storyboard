@@ -1049,7 +1049,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Income Arrow (1)" translatesAutoresizingMaskIntoConstraints="NO" id="EOj-n6-GMr">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Income Arrow (3)" translatesAutoresizingMaskIntoConstraints="NO" id="EOj-n6-GMr">
                                                 <rect key="frame" x="105" y="8" width="57" height="57"/>
                                             </imageView>
                                         </subviews>
@@ -1097,7 +1097,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Expense arrow (1)" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-kH-BRf">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Expense arrow (4)" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-kH-BRf">
                                                 <rect key="frame" x="154" y="8" width="57" height="57"/>
                                             </imageView>
                                         </subviews>
@@ -1571,9 +1571,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Expense arrow (1)" width="57" height="57"/>
         <image name="Expense arrow (4)" width="57" height="57"/>
-        <image name="Income Arrow (1)" width="57" height="57"/>
         <image name="Income Arrow (3)" width="57" height="57"/>
         <image name="MINI" width="836" height="1304"/>
         <image name="Monterey-iPhone" width="1000" height="2000"/>
