@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol TransactionDetailsDelegate {
-    func transactionDetails(list: Transaction)
-}
 class HomePageViewController: UIViewController {
-    var delegate: TransactionDetailsDelegate?
     @IBOutlet weak var backgroundImg: UIImageView!
 
     @IBOutlet weak var totalBalaceCard: UIView!
@@ -37,6 +33,7 @@ class HomePageViewController: UIViewController {
         incomeTotalView.layer.cornerRadius = 10
         expenseTotalView.layer.cornerRadius = 10
         backgroundImg.layer.cornerRadius = 30
+        backgroundImg.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         fetchTransactions()
         transactionsTable.reloadData()
         transactionsTable.delegate = self
@@ -119,6 +116,7 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
             }
         if list.isIncome == true {
             cell.amountLabel.text = "+ ₹\(amount)"
+            cell.amountLabel.textColor = .green
         } else {
             cell.amountLabel.text = "- ₹\(amount)"
             cell.amountLabel.textColor = .red
@@ -173,13 +171,11 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         deleteAction.backgroundColor = .red
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-
+        
         return configuration
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reversedTransactions: [Transaction] = Array(transactions!.reversed())
-        let list = reversedTransactions[indexPath.row]
-        self.delegate?.transactionDetails(list: list)
+        
         let details = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
         details.position = indexPath.row
         self.navigationController?.pushViewController(details, animated: true)

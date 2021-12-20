@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import CoreData
 class ExpensePieChartViewController: UIViewController, ChartViewDelegate {
     var pieChart = PieChartView()
     var transactions: [Transaction]?
@@ -26,7 +27,10 @@ class ExpensePieChartViewController: UIViewController, ChartViewDelegate {
         
         
         do {
-            self.transactions = try context.fetch(Transaction.fetchRequest())
+            let request = Transaction.fetchRequest() as NSFetchRequest <Transaction>
+            let predicate = NSPredicate(format: "isIncome = false")
+            request.predicate = predicate
+            self.transactions = try context.fetch(request)
         } catch {
             print("error \(error.localizedDescription)")
         }
@@ -69,7 +73,7 @@ extension ExpensePieChartViewController: UITableViewDelegate, UITableViewDataSou
                 return String(format: "%.1f", list.amount)
                 }
 
-                cell.transactionAmount.text = "+ ₹\(amount)"
+                cell.transactionAmount.text = "- ₹\(amount)"
 
             if list.category == nil {
                 cell.transactionCategory.text = "-"
@@ -79,6 +83,7 @@ extension ExpensePieChartViewController: UITableViewDelegate, UITableViewDataSou
             
             
             cell.transactionDate.text = list.dateAndTime?.formatted(date: .abbreviated, time: .omitted)
+        cell.transactionAmount.textColor = .red
             cell.layer.cornerRadius = 8
         
        

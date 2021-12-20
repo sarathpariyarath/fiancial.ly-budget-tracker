@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import CoreData
 
 class IncomePieViewController: UIViewController, ChartViewDelegate {
     
@@ -26,7 +27,10 @@ class IncomePieViewController: UIViewController, ChartViewDelegate {
         
         
         do {
-            self.transactions = try context.fetch(Transaction.fetchRequest())
+            let request = Transaction.fetchRequest() as NSFetchRequest <Transaction>
+            let predicate = NSPredicate(format: "isIncome = true")
+            request.predicate = predicate
+            self.transactions = try context.fetch(request)
         } catch {
             print("error \(error.localizedDescription)")
         }
@@ -87,5 +91,6 @@ extension IncomePieViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
     
 }

@@ -173,11 +173,11 @@
 				371CC3CD27671AAA0079F851 /* HomePageViewController.swift */,
 				3799D46727676B6800CA6CFB /* TransactionTableViewCell.swift */,
 				37AAA130276B3E6B0013125E /* DetailsViewController.swift */,
-				3799D4712768BCB400CA6CFB /* PieChart */,
-				3799D46E2768BC8200CA6CFB /* Categories */,
 				3799D4692768650800CA6CFB /* OverViewController.swift */,
 				37AAA12A276AF6C70013125E /* OverViewTableViewCell.swift */,
 				3799D46B27686A3800CA6CFB /* FaceIDViewController.swift */,
+				3799D4712768BCB400CA6CFB /* PieChart */,
+				3799D46E2768BC8200CA6CFB /* Categories */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
