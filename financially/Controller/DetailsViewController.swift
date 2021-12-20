@@ -66,4 +66,9 @@ class DetailsViewController: UIViewController {
             print("error \(error.localizedDescription)")
         }
     }
+    @IBAction func editButtonClicked(_ sender: Any) {
+        let editPage = self.storyboard?.instantiateViewController(withIdentifier: "EditTransactionViewControllerID") as! EditTransactionViewController
+        editPage.position = position
+        self.navigationController?.pushViewController(editPage, animated: true)
+    }
 }

@@ -32,7 +32,7 @@ class HomePageViewController: UIViewController {
         totalBalaceCard.layer.cornerRadius = 10
         incomeTotalView.layer.cornerRadius = 10
         expenseTotalView.layer.cornerRadius = 10
-        backgroundImg.layer.cornerRadius = 30
+        backgroundImg.layer.cornerRadius = 25
         backgroundImg.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         fetchTransactions()
         transactionsTable.reloadData()

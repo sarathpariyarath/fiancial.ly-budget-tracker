@@ -13,15 +13,32 @@ class IncomePieViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var incomeTransactionTable: UITableView!
     var pieChart = PieChartView()
+    @IBOutlet weak var minimumDatePicker: UIDatePicker!
+    @objc var transactions: [Transaction]?
+    @IBOutlet weak var maximumDatePicker: UIDatePicker!
     @IBOutlet weak var pieChartView: UIView!
-    var transactions: [Transaction]?
     let context = CoreDataManager.shared.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchTransactions()
         pieChart.delegate = self
         incomeTransactionTable.delegate = self
         incomeTransactionTable.dataSource = self
-        fetchTransactions()
+        minimumDatePicker.maximumDate = Date().addingTimeInterval(-86400)
+        
+        
+    }
+    @IBAction func uiMinimumDateClicked(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.maximumDatePicker.minimumDate = self.minimumDatePicker.date
+        }
+    }
+    @IBAction func uiDatePickerClicked(_ sender: Any) {
+        
+        self.dismiss(animated: true) {
+            self.sortDate()
+            self.viewDidLayoutSubviews()
+        }
     }
     func fetchTransactions() {
         
@@ -31,6 +48,22 @@ class IncomePieViewController: UIViewController, ChartViewDelegate {
             let predicate = NSPredicate(format: "isIncome = true")
             request.predicate = predicate
             self.transactions = try context.fetch(request)
+        } catch {
+            print("error \(error.localizedDescription)")
+        }
+    }
+    func sortDate() {
+        
+        
+        do {
+            let request = Transaction.fetchRequest() as NSFetchRequest<Transaction>
+            let pred = NSPredicate(format: "isIncome == true && dateAndTime >= %@ && dateAndTime <= %@", minimumDatePicker.date as Date as CVarArg, maximumDatePicker.date as Date as CVarArg)
+            request.predicate = pred
+            //            let sort = NSSortDescriptor(key: "title", ascending: false)
+            //            request.sortDescriptors = [sort]
+            self.transactions = try context.fetch(request)
+            incomeTransactionTable.reloadData()
+            //            let sort = NSSortDescriptor(key: #keyPath(transactions.title), ascending: true)
         } catch {
             print("error \(error.localizedDescription)")
         }

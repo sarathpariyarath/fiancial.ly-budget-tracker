@@ -14,14 +14,46 @@ class ExpensePieChartViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var expenseTransactionTable: UITableView!
     @IBOutlet weak var pieChartView: UIView!
     @IBOutlet weak var expenseCategoryTable: UITableView!
+    @IBOutlet weak var minimumDatePicker: UIDatePicker!
+    @IBOutlet weak var maximumDatePicker: UIDatePicker!
     let context = CoreDataManager.shared.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchTransactions()
         pieChart.delegate = self
         expenseTransactionTable.delegate = self
         expenseTransactionTable.dataSource = self
-        fetchTransactions()
+       
+        minimumDatePicker.maximumDate = Date().addingTimeInterval(-86400)
         // Do any additional setup after loading the view.
+    }
+    @IBAction func uiMinimumDateClicked(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.maximumDatePicker.minimumDate = self.minimumDatePicker.date
+        }
+    }
+    @IBAction func uiDatePickerClicked(_ sender: Any) {
+        
+        self.dismiss(animated: true) {
+            self.sortDate()
+            self.viewDidLayoutSubviews()
+        }
+    }
+    func sortDate() {
+        
+        
+        do {
+            let request = Transaction.fetchRequest() as NSFetchRequest<Transaction>
+            let pred = NSPredicate(format: "isIncome == false && dateAndTime >= %@ && dateAndTime <= %@", minimumDatePicker.date as Date as CVarArg, maximumDatePicker.date as Date as CVarArg)
+            request.predicate = pred
+            //            let sort = NSSortDescriptor(key: "title", ascending: false)
+            //            request.sortDescriptors = [sort]
+            self.transactions = try context.fetch(request)
+            expenseCategoryTable.reloadData()
+            //            let sort = NSSortDescriptor(key: #keyPath(transactions.title), ascending: true)
+        } catch {
+            print("error \(error.localizedDescription)")
+        }
     }
     func fetchTransactions() {
         
