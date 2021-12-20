@@ -877,6 +877,9 @@
                                             <segment title="INCOME"/>
                                             <segment title="EXPENSE"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="pickerViewClicked:" destination="Nf3-fV-fAO" eventType="valueChanged" id="5Dy-L0-8Mn"/>
+                                        </connections>
                                     </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AMOUNT" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXg-2q-qQb">
                                         <rect key="frame" x="0.0" y="98" width="374" height="40"/>

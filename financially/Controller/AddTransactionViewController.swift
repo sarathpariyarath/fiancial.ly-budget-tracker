@@ -12,6 +12,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     let context = CoreDataManager.shared.persistentContainer.viewContext
     var transactions: [Transaction]?
     var incoCategory: [IncomeCategory]?
+    var expenseCateory: [ExpenseCategory]?
     @IBOutlet weak var transactionTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateAndTimePicker: UIDatePicker!
@@ -65,6 +66,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         do {
             self.transactions = try context.fetch(Transaction.fetchRequest())
             self.incoCategory = try context.fetch(IncomeCategory.fetchRequest())
+            self.expenseCateory = try context.fetch(ExpenseCategory.fetchRequest())
             
         } catch {
             print("error \(error.localizedDescription)")
@@ -165,6 +167,9 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
 
         
     }
+    @IBAction func pickerViewClicked(_ sender: Any) {
+        categoryPicker.reloadAllComponents()
+    }
     
 }
 
@@ -174,11 +179,21 @@ extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return incoCategory?.count ?? 0
+        if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
+            return incoCategory?.count ?? 0
+        } else {
+            return expenseCateory?.count ?? 0
+        }
+        
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let list = incoCategory?[row]
-        return list!.categoryName
+        if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
+            let list = incoCategory?[row]
+            return list!.categoryName
+        } else {
+            let list = expenseCateory?[row]
+            return list!.categoryName
+        }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)

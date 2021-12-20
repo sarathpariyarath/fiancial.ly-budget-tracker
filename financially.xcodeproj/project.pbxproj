@@ -164,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				37B99FF9275B50DB004210CD /* Main.storyboard */,
-				37967A1A27709CAB0011200D /* EditTransactionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +177,7 @@
 				37AAA130276B3E6B0013125E /* DetailsViewController.swift */,
 				3799D4692768650800CA6CFB /* OverViewController.swift */,
 				37AAA12A276AF6C70013125E /* OverViewTableViewCell.swift */,
+				37967A1A27709CAB0011200D /* EditTransactionViewController.swift */,
 				3799D46B27686A3800CA6CFB /* FaceIDViewController.swift */,
 				3799D4712768BCB400CA6CFB /* PieChart */,
 				3799D46E2768BC8200CA6CFB /* Categories */,
