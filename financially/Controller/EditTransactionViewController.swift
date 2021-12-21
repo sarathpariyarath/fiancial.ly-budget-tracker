@@ -11,6 +11,7 @@ class EditTransactionViewController: UIViewController, UIImagePickerControllerDe
     let context = CoreDataManager.shared.persistentContainer.viewContext
     var transactions: [Transaction]?
     var incoCategory: [IncomeCategory]?
+    var expenseCategory: [ExpenseCategory]?
     var position: Int?
     @IBOutlet weak var transactionTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var titleTextField: UITextField!
@@ -70,12 +71,14 @@ class EditTransactionViewController: UIViewController, UIImagePickerControllerDe
         do {
             self.transactions = try context.fetch(Transaction.fetchRequest())
             self.incoCategory = try context.fetch(IncomeCategory.fetchRequest())
-            
+            self.expenseCategory = try context.fetch(ExpenseCategory.fetchRequest())
         } catch {
             print("error \(error.localizedDescription)")
         }
     }
-
+    @IBAction func pickerViewClicked(_ sender: Any) {
+        categoryPicker.reloadAllComponents()
+    }
     // Add transaction button clicked
     @IBAction func editTransactionClicked(_ sender: Any) {
         if titleTextField.text?.isEmpty == false && notesTextField.text?.isEmpty == false && amountTextField.text?.isEmpty == false {
@@ -160,11 +163,21 @@ extension EditTransactionViewController: UIPickerViewDelegate, UIPickerViewDataS
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return incoCategory?.count ?? 0
+        if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
+            return incoCategory?.count ?? 0
+        } else {
+            return expenseCategory?.count ?? 0
+        }
+        
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let list = incoCategory?[row]
-        return list!.categoryName
+        if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
+            let list = incoCategory?[row]
+            return list!.categoryName
+        } else {
+            let list = expenseCategory?[row]
+            return list!.categoryName
+        }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
@@ -176,4 +189,5 @@ extension EditTransactionViewController: UIPickerViewDelegate, UIPickerViewDataS
         print(list!.categoryName!)
         pickerSelection = list?.categoryName
     }
+
 }

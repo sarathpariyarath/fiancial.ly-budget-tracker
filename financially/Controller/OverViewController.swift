@@ -102,6 +102,11 @@ class OverViewController: UIViewController {
         }
     }
     
+    @IBAction func minimumDatepickerClicked(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.maximumDatePicker.minimumDate = self.minimumDatePicker.date
+        }
+    }
     func sortDate() {
         
         
@@ -158,6 +163,9 @@ extension OverViewController: UITableViewDelegate, UITableViewDataSource {
         cell.transactionDate.text = list.dateAndTime?.formatted(date: .abbreviated, time: .omitted)
         cell.layer.cornerRadius = 8
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
