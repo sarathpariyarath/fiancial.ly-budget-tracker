@@ -24,7 +24,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     var pickerSelection: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dateAndTimePicker.maximumDate = dateAndTimePicker.date
         self.title = "ADD TRANSACTIONS"
         titleTextField?.layer.cornerRadius = 9.0
         categoryPicker.delegate = self
@@ -75,7 +75,15 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     
     // Add transaction button clicked
     @IBAction func addTransactionClicked(_ sender: Any) {
-        if titleTextField.text?.isEmpty == false && notesTextField.text?.isEmpty == false && amountTextField.text?.isEmpty == false {
+        if titleTextField.text!.count > 8 {
+            let alert = UIAlertController(title: "Make your title short", message: "Enter a brief title", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+        } else if amountTextField.text!.count > 8 {
+            let alert = UIAlertController(title: "Amount Too Long", message: "Enter smaller amount", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+        } else if titleTextField.text?.isEmpty == false && notesTextField.text?.isEmpty == false && amountTextField.text?.isEmpty == false {
             if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
                 let transactionObject = Transaction(context: self.context)
 //                let incomeCategory = IncomeCategory(context: self.context)
@@ -130,6 +138,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                 
                 transactionObject.note = notesTextField.text
                 transactionObject.dateAndTime = dateAndTimePicker.date
+                transactionObject.category = pickerSelection
                 clearTextField()
                 do {
                     try self.context.save()
@@ -158,7 +167,8 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
             }
             let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
             self.navigationController?.pushViewController(homeVC, animated: true)
-        } else {
+        }
+        else {
             let alert = UIAlertController(title: "Fill all fields", message: "Please provide correct details", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -200,10 +210,18 @@ extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSo
         return true
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let list = incoCategory?[row]
-        print(list!)
-        print(list!.categoryName!)
-        pickerSelection = list?.categoryName
+        if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
+            let list = incoCategory?[row]
+            print(list!)
+            print(list!.categoryName!)
+            pickerSelection = list?.categoryName
+        } else {
+            let list = expenseCateory?[row]
+            print(list!)
+            print(list!.categoryName!)
+            pickerSelection = list?.categoryName
+        }
+        
     }
 }
 
