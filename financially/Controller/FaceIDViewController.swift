@@ -12,15 +12,15 @@ class FaceIDViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.setHidesBackButton(true, animated: true)
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func authenticateWithFaceId(_ sender: Any) {
         let context: LAContext = LAContext()
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message") { (good, error) in
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Message") { (good, error) in
                 if good {
                     print("Good")
                     DispatchQueue.main.async {
