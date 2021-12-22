@@ -100,5 +100,8 @@ extension IncomeCategoryViewController: UITableViewDelegate, UITableViewDataSour
         print(addIncomeTextField.text!)
         return true
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
