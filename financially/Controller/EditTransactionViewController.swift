@@ -40,8 +40,11 @@ class EditTransactionViewController: UIViewController, UIImagePickerControllerDe
         titleTextField.delegate = self
         amountTextField.delegate = self
         notesTextField.delegate = self
-        
+        pickerSelection = list.category
         categoryPicker.selectRow((transactions!.count/2), inComponent: 0, animated: true)
+        if list.isIncome == false {
+            transactionTypeSegmentedControl.selectedSegmentIndex = 1
+        }
         // Do any additional setup after loading the view.
     }
     // Function to clear all textfields after end editing
@@ -109,7 +112,8 @@ class EditTransactionViewController: UIViewController, UIImagePickerControllerDe
 
             } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 { //when expense category selected in segmented control
                 print("Expense :")
-                let transactionObject = Transaction(context: self.context)
+                let reversedTransactions: [Transaction] = Array(transactions!.reversed())
+                let transactionObject = reversedTransactions[position!]
                 transactionObject.isIncome = false
                 transactionObject.title = titleTextField.text
                 if let expenseAmount = Float(amountTextField.text!) {
@@ -118,6 +122,7 @@ class EditTransactionViewController: UIViewController, UIImagePickerControllerDe
                 
                 transactionObject.note = notesTextField.text
                 transactionObject.dateAndTime = dateAndTimePicker.date
+                transactionObject.category = pickerSelection
                 clearTextField()
                 do {
                     try self.context.save()
@@ -184,10 +189,17 @@ extension EditTransactionViewController: UIPickerViewDelegate, UIPickerViewDataS
         return true
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let list = incoCategory?[row]
-        print(list!)
-        print(list!.categoryName!)
-        pickerSelection = list?.categoryName
+        if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
+            let list = incoCategory?[row]
+            print(list!)
+            print(list!.categoryName!)
+            pickerSelection = list?.categoryName
+        } else {
+            let list = expenseCategory?[row]
+            print(list!)
+            print(list!.categoryName!)
+            pickerSelection = list?.categoryName
+        }
     }
 
 }

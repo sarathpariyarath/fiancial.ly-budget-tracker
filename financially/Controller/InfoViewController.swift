@@ -10,9 +10,11 @@ import UIKit
 class InfoViewController: UIViewController {
     @IBOutlet weak var stackView: UIView!
     let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
+    @IBOutlet weak var aboutTextView: UITextView!
     @IBOutlet weak var biometricsSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
+        aboutTextView.layer.cornerRadius = 10
         stackView.layer.cornerRadius = 10
         if isDarkMode == true {
             biometricsSwitch.isOn = true

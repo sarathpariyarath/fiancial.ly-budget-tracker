@@ -75,7 +75,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     
     // Add transaction button clicked
     @IBAction func addTransactionClicked(_ sender: Any) {
-        if titleTextField.text!.count > 8 {
+        if titleTextField.text!.count > 14 {
             let alert = UIAlertController(title: "Make your title short", message: "Enter a brief title", preferredStyle: UIAlertController.Style.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
