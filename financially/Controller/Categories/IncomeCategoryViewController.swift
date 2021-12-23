@@ -24,10 +24,16 @@ class IncomeCategoryViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func incomeCategoryAddButtonClicked(_ sender: Any) {
-        let incomeCategory = IncomeCategory(context: self.context)
-        incomeCategory.categoryName = addIncomeTextField.text
-        addIncomeTextField.text = ""
-        addIncomeTextField.endEditing(true)
+        
+        if (addIncomeTextField.text?.isEmpty == false) && (addIncomeTextField.text!.prefix(0) != " ") {
+            let incomeCategory = IncomeCategory(context: self.context)
+            incomeCategory.categoryName = addIncomeTextField.text
+            addIncomeTextField.text = ""
+            addIncomeTextField.endEditing(true)
+        }
+        
+        
+        
         do {
             try self.context.save()
         } catch {

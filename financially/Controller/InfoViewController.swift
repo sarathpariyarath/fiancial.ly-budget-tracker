@@ -9,18 +9,23 @@ import UIKit
 
 class InfoViewController: UIViewController {
     @IBOutlet weak var stackView: UIView!
+    @IBOutlet weak var appVersionLabel: UILabel!
     let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
-    @IBOutlet weak var aboutTextView: UITextView!
+    @IBOutlet weak var versionView: UIView!
     @IBOutlet weak var biometricsSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-        aboutTextView.layer.cornerRadius = 10
         stackView.layer.cornerRadius = 10
         if isDarkMode == true {
             biometricsSwitch.isOn = true
         } else if isDarkMode == false {
             biometricsSwitch.isOn = false
         }
+        let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
+
+        appVersionLabel.text = nsObject as? String
+        versionView.layer.cornerRadius = 10
+        
     }
     
     

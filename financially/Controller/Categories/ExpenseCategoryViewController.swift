@@ -21,15 +21,18 @@ class ExpenseCategoryViewController: UIViewController {
     }
     
     @IBAction func addExpenseCategoryClicked(_ sender: Any) {
-        let expenceCategory = ExpenseCategory(context: self.context)
-        expenceCategory.categoryName = expenseCategoryTextField.text
-        expenseCategoryTextField.text = ""
-        expenseCategoryTextField.endEditing(true)
-        do {
-            try self.context.save()
-        } catch {
-            print("Failed to save income category")
+        if (expenseCategoryTextField.text?.isEmpty == false) && (expenseCategoryTextField.text!.prefix(0) == " "){
+            let expenceCategory = ExpenseCategory(context: self.context)
+            expenceCategory.categoryName = expenseCategoryTextField.text
+            expenseCategoryTextField.text = ""
+            expenseCategoryTextField.endEditing(true)
+            do {
+                try self.context.save()
+            } catch {
+                print("Failed to save income category")
+            }
         }
+        
         self.fetchExpenseTransactions()
         expenseCategoryTable.reloadData()
         
