@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AddTransactionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //context manager
@@ -13,6 +14,8 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     var transactions: [Transaction]?
     var incoCategory: [IncomeCategory]?
     var expenseCateory: [ExpenseCategory]?
+    let notificationCenter = UNUserNotificationCenter.current()
+    @IBOutlet weak var scheduleSwitch: UISwitch!
     @IBOutlet weak var transactionTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateAndTimePicker: UIDatePicker!
@@ -24,7 +27,16 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
     var pickerSelection: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateAndTimePicker.maximumDate = dateAndTimePicker.date
+        notificationCenter.requestAuthorization(options: [.alert, .sound]) { (permissionGranted, error) in
+            if (!permissionGranted) {
+                print("Permission Denied")
+            }
+            DispatchQueue.main.async {
+                self.scheduleSwitch.isOn = false
+            }
+            
+        }
+//        dateAndTimePicker.maximumDate = dateAndTimePicker.date
         self.title = "ADD TRANSACTIONS"
         titleTextField?.layer.cornerRadius = 9.0
         categoryPicker.delegate = self
@@ -101,6 +113,27 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                     transactionObject.dateAndTime = dateAndTimePicker.date
                     transactionObject.category = pickerSelection
                     clearTextField()
+                    if scheduleSwitch.isOn {
+                        notificationCenter.getNotificationSettings { (settings) in
+                            if settings.authorizationStatus == .authorized {
+                                let content = UNMutableNotificationContent()
+                                content.title = "This is a reminder ! "
+                                content.body = "\(transactionObject.title!) - Review This Transaction"
+                                let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.dateAndTimePicker.date)
+                                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+                                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                                self.notificationCenter.add(request) { (error) in
+                                    if error != nil {
+                                        print(error?.localizedDescription as Any)
+                                    }
+                                    
+                                }
+                                
+                            } else {
+                                
+                            }
+                        }
+                    }
                     do {
                         try self.context.save()
                         fetchTransactions()
@@ -183,6 +216,12 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         categoryPicker.reloadAllComponents()
     }
     
+//    @IBAction func scheduleButtonClicked(_ sender: Any) {
+//        //notification
+//        if scheduleSwitch.isOn {
+//
+//        }
+//    }
 }
 
 extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {

@@ -21,7 +21,7 @@
 		37983CB027637175000FC4CE /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CAA27637175000FC4CE /* Transaction+CoreDataProperties.swift */; };
 		3799D46827676B6900CA6CFB /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799D46727676B6800CA6CFB /* TransactionTableViewCell.swift */; };
 		3799D46A2768650800CA6CFB /* OverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799D4692768650800CA6CFB /* OverViewController.swift */; };
-		3799D46C27686A3800CA6CFB /* FaceIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799D46B27686A3800CA6CFB /* FaceIDViewController.swift */; };
+		3799D46C27686A3800CA6CFB /* BiometricsLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799D46B27686A3800CA6CFB /* BiometricsLock.swift */; };
 		3799D4702768BCAB00CA6CFB /* IncomePieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799D46F2768BCAB00CA6CFB /* IncomePieViewController.swift */; };
 		37AAA12B276AF6C70013125E /* OverViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AAA12A276AF6C70013125E /* OverViewTableViewCell.swift */; };
 		37AAA131276B3E6B0013125E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AAA130276B3E6B0013125E /* DetailsViewController.swift */; };
@@ -54,7 +54,7 @@
 		37983CAA27637175000FC4CE /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3799D46727676B6800CA6CFB /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		3799D4692768650800CA6CFB /* OverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewController.swift; sourceTree = "<group>"; };
-		3799D46B27686A3800CA6CFB /* FaceIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDViewController.swift; sourceTree = "<group>"; };
+		3799D46B27686A3800CA6CFB /* BiometricsLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsLock.swift; sourceTree = "<group>"; };
 		3799D46F2768BCAB00CA6CFB /* IncomePieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomePieViewController.swift; sourceTree = "<group>"; };
 		37AAA12A276AF6C70013125E /* OverViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewTableViewCell.swift; sourceTree = "<group>"; };
 		37AAA130276B3E6B0013125E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 				3799D4692768650800CA6CFB /* OverViewController.swift */,
 				37AAA12A276AF6C70013125E /* OverViewTableViewCell.swift */,
 				37967A1A27709CAB0011200D /* EditTransactionViewController.swift */,
-				3799D46B27686A3800CA6CFB /* FaceIDViewController.swift */,
+				3799D46B27686A3800CA6CFB /* BiometricsLock.swift */,
 				37D80F202772E62700C1C282 /* RouteViewController.swift */,
 				37D80F1E2772E39500C1C282 /* InfoViewController.swift */,
 				3799D4712768BCB400CA6CFB /* PieChart */,
@@ -322,7 +322,7 @@
 				37D80F1F2772E39500C1C282 /* InfoViewController.swift in Sources */,
 				3799D46827676B6900CA6CFB /* TransactionTableViewCell.swift in Sources */,
 				37B99FF4275B50DB004210CD /* AppDelegate.swift in Sources */,
-				3799D46C27686A3800CA6CFB /* FaceIDViewController.swift in Sources */,
+				3799D46C27686A3800CA6CFB /* BiometricsLock.swift in Sources */,
 				37983CAD27637175000FC4CE /* IncomeCategory+CoreDataClass.swift in Sources */,
 				37B99FFE275B50DB004210CD /* financially.xcdatamodeld in Sources */,
 				37967A1B27709CAB0011200D /* EditTransactionViewController.swift in Sources */,

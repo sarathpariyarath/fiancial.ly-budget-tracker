@@ -8,7 +8,7 @@
 import UIKit
 import LocalAuthentication
 
-class FaceIDViewController: UIViewController {
+class BiometricsLock: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

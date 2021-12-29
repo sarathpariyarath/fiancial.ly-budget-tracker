@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ExpenseCategory" representedClassName="ExpenseCategory" syncable="YES">
         <attribute name="categoryName" optional="YES" attributeType="String"/>
         <relationship name="transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="expenseCategory" inverseEntity="Transaction"/>
@@ -20,8 +20,8 @@
         <relationship name="incomeCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IncomeCategory" inverseName="transaction" inverseEntity="IncomeCategory"/>
     </entity>
     <elements>
-        <element name="ExpenseCategory" positionX="-382.8046875" positionY="-102.546875" width="128" height="73"/>
-        <element name="IncomeCategory" positionX="138.15625" positionY="-87.6640625" width="128" height="73"/>
-        <element name="Transaction" positionX="-178.08984375" positionY="-177.37890625" width="234.421875" height="178"/>
+        <element name="ExpenseCategory" positionX="-1027" positionY="-205.0859375" width="128" height="73"/>
+        <element name="IncomeCategory" positionX="-564.19921875" positionY="-189.8671875" width="128" height="73"/>
+        <element name="Transaction" positionX="-854.859375" positionY="-294.9921875" width="234.421875" height="178"/>
     </elements>
 </model>

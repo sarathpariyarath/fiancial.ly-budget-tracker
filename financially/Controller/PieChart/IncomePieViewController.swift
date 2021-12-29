@@ -57,8 +57,8 @@ class IncomePieViewController: UIViewController, ChartViewDelegate {
         
         do {
             let request = Transaction.fetchRequest() as NSFetchRequest<Transaction>
-            let pred = NSPredicate(format: "isIncome == true && dateAndTime >= %@ && dateAndTime <= %@", minimumDatePicker.date as Date as CVarArg, maximumDatePicker.date as Date as CVarArg)
-            request.predicate = pred
+            let predicate = NSPredicate(format: "isIncome == true && dateAndTime >= %@ && dateAndTime <= %@", minimumDatePicker.date as Date as CVarArg, maximumDatePicker.date as Date as CVarArg)
+            request.predicate = predicate
             //            let sort = NSSortDescriptor(key: "title", ascending: false)
             //            request.sortDescriptors = [sort]
             self.transactions = try context.fetch(request)

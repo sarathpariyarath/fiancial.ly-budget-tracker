@@ -13,7 +13,7 @@ class RouteViewController: UIViewController {
         super.viewDidLoad()
 print(isDarkMode)
         if isDarkMode == true {
-            let faceId = self.storyboard?.instantiateViewController(withIdentifier: "authenticationView") as! FaceIDViewController
+            let faceId = self.storyboard?.instantiateViewController(withIdentifier: "authenticationView") as! BiometricsLock
             self.navigationController?.pushViewController(faceId, animated: true)
         } else {
             let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
