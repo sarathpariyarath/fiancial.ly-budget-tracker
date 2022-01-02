@@ -8,7 +8,7 @@
 import UIKit
 import LocalAuthentication
 
-class BiometricsLock: UIViewController {
+class AppLockViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class BiometricsLock: UIViewController {
     @IBAction func authenticateWithFaceId(_ sender: Any) {
         let context: LAContext = LAContext()
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
-            context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Message") { (good, error) in
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Please allow") { (good, error) in
                 if good {
                     print("Good")
                     DispatchQueue.main.async {

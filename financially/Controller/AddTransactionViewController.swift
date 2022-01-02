@@ -173,6 +173,27 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                     transactionObject.dateAndTime = dateAndTimePicker.date
                     transactionObject.category = pickerSelection
                     clearTextField()
+                    if scheduleSwitch.isOn {
+                        notificationCenter.getNotificationSettings { (settings) in
+                            if settings.authorizationStatus == .authorized {
+                                let content = UNMutableNotificationContent()
+                                content.title = "This is a reminder ! "
+                                content.body = "\(transactionObject.title!) - Review This Transaction"
+                                let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.dateAndTimePicker.date)
+                                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+                                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                                self.notificationCenter.add(request) { (error) in
+                                    if error != nil {
+                                        print(error?.localizedDescription as Any)
+                                    }
+                                    
+                                }
+                                
+                            } else {
+                                
+                            }
+                        }
+                    }
                     do {
                         try self.context.save()
                         fetchTransactions()

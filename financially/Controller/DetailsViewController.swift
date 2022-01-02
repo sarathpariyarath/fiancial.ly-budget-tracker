@@ -35,6 +35,7 @@ class DetailsViewController: UIViewController {
         categoryView.layer.cornerRadius = 10
         dateView.layer.cornerRadius = 10
         noteView.layer.cornerRadius = 10
+        transactionImageView.layer.cornerRadius = 5
         let reversedTransactions: [Transaction] = Array(transactions!.reversed())
         let list = reversedTransactions[position!]
         transactionTitle.text = list.title
