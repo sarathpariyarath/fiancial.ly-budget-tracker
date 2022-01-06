@@ -45,6 +45,16 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         amountTextField.delegate = self
         notesTextField.delegate = self
         fetchTransactions()
+        if expenseCateory?.isEmpty == true {
+            DispatchQueue.main.async {
+                self.categoryPicker.isUserInteractionEnabled = false
+            }
+        }
+        if incoCategory?.isEmpty == true {
+            DispatchQueue.main.async {
+                self.categoryPicker.isUserInteractionEnabled = false
+            }
+        }
         categoryPicker.selectRow((transactions!.count/2), inComponent: 0, animated: true)
     }
     // Function to clear all textfields after end editing
@@ -79,6 +89,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
             self.transactions = try context.fetch(Transaction.fetchRequest())
             self.incoCategory = try context.fetch(IncomeCategory.fetchRequest())
             self.expenseCateory = try context.fetch(ExpenseCategory.fetchRequest())
+            
             
         } catch {
             print("error \(error.localizedDescription)")
@@ -237,12 +248,6 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         categoryPicker.reloadAllComponents()
     }
     
-//    @IBAction func scheduleButtonClicked(_ sender: Any) {
-//        //notification
-//        if scheduleSwitch.isOn {
-//
-//        }
-//    }
 }
 
 extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate {
