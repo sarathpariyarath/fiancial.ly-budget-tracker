@@ -11,6 +11,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var stackView: UIView!
     @IBOutlet weak var appVersionLabel: UILabel!
 
+    @IBOutlet weak var buildVersionLabel: UILabel!
     @IBOutlet weak var animationView: AnimationView!
     let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
     @IBOutlet weak var versionView: UIView!
@@ -28,7 +29,8 @@ class InfoViewController: UIViewController {
             biometricsSwitch.isOn = false
         }
         let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
-
+        let buildVersion: AnyObject? = Bundle.main.infoDictionary! ["CFBundleVersion"] as AnyObject
+        buildVersionLabel.text = buildVersion as? String
         appVersionLabel.text = nsObject as? String
         versionView.layer.cornerRadius = 10
         

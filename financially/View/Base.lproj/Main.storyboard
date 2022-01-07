@@ -1858,16 +1858,51 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="heart-lottie"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hZ-ff-57z">
+                                <rect key="frame" x="10" y="244" width="394" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="bEB-aH-ko2">
+                                        <rect key="frame" x="5" y="10" width="379" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Build version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkr-aS-CEH">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="30"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.1.1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibC-6J-ifB">
+                                                <rect key="frame" x="338" y="0.0" width="41" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="uqE-uz-48B"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.46614583329999998" green="0.46614583329999998" blue="0.46614583329999998" alpha="0.1096336921" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Fni-RN-YYU"/>
+                                    <constraint firstAttribute="trailing" secondItem="bEB-aH-ko2" secondAttribute="trailing" constant="10" id="OIx-Ro-MPO"/>
+                                    <constraint firstItem="bEB-aH-ko2" firstAttribute="top" secondItem="0hZ-ff-57z" secondAttribute="top" constant="10" id="g58-f8-IEh"/>
+                                    <constraint firstItem="bEB-aH-ko2" firstAttribute="leading" secondItem="0hZ-ff-57z" secondAttribute="leading" constant="5" id="mUk-Rf-RG8"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KVh-hp-ZVP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0hZ-ff-57z" firstAttribute="top" secondItem="o8F-Ez-R3F" secondAttribute="bottom" constant="8" symbolic="YES" id="75V-gI-Njw"/>
                             <constraint firstItem="tYv-0k-O19" firstAttribute="trailing" secondItem="KVh-hp-ZVP" secondAttribute="trailing" id="8YI-Ig-ds1"/>
                             <constraint firstItem="o8F-Ez-R3F" firstAttribute="leading" secondItem="KVh-hp-ZVP" secondAttribute="leading" constant="10" id="GGK-eP-YcF"/>
                             <constraint firstItem="6jL-YX-WaH" firstAttribute="leading" secondItem="KVh-hp-ZVP" secondAttribute="leading" constant="10" id="Luv-nJ-eC5"/>
+                            <constraint firstItem="KVh-hp-ZVP" firstAttribute="trailing" secondItem="0hZ-ff-57z" secondAttribute="trailing" constant="10" id="M9P-q7-wAO"/>
                             <constraint firstItem="tYv-0k-O19" firstAttribute="bottom" secondItem="KVh-hp-ZVP" secondAttribute="bottom" id="YGc-WE-Bxw"/>
                             <constraint firstItem="6jL-YX-WaH" firstAttribute="top" secondItem="KVh-hp-ZVP" secondAttribute="top" constant="20" id="h2U-j7-3Zr"/>
                             <constraint firstItem="o8F-Ez-R3F" firstAttribute="top" secondItem="6jL-YX-WaH" secondAttribute="bottom" constant="8" symbolic="YES" id="ipi-TR-dC0"/>
+                            <constraint firstItem="0hZ-ff-57z" firstAttribute="leading" secondItem="KVh-hp-ZVP" secondAttribute="leading" constant="10" id="kXo-ex-YA6"/>
                             <constraint firstItem="KVh-hp-ZVP" firstAttribute="trailing" secondItem="6jL-YX-WaH" secondAttribute="trailing" constant="10" id="qWW-fm-4DG"/>
                             <constraint firstItem="KVh-hp-ZVP" firstAttribute="trailing" secondItem="o8F-Ez-R3F" secondAttribute="trailing" constant="10" id="rDp-bP-WWx"/>
                         </constraints>
@@ -1877,6 +1912,7 @@
                         <outlet property="animationView" destination="tYv-0k-O19" id="fjl-Ub-vs8"/>
                         <outlet property="appVersionLabel" destination="LOA-NQ-onY" id="KGz-kM-JKa"/>
                         <outlet property="biometricsSwitch" destination="Jbe-8R-hHE" id="G7P-CK-mEC"/>
+                        <outlet property="buildVersionLabel" destination="ibC-6J-ifB" id="X9h-Dp-5gT"/>
                         <outlet property="stackView" destination="6jL-YX-WaH" id="mpf-pg-Upp"/>
                         <outlet property="versionView" destination="o8F-Ez-R3F" id="BoJ-vv-87v"/>
                     </connections>
