@@ -1303,7 +1303,7 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 NOV, 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-Fg-Xby">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="13 NOV, 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4O-Fg-Xby">
                                                     <rect key="frame" x="308.66666666666669" y="34.333333333333336" width="85.333333333333314" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -1317,16 +1317,16 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="GIV-4e-Jeq" firstAttribute="leading" secondItem="6ts-7L-Jsg" secondAttribute="leadingMargin" id="77z-9H-3x9"/>
-                                                <constraint firstItem="KYj-gN-drS" firstAttribute="leading" secondItem="GIV-4e-Jeq" secondAttribute="trailing" constant="207.33333333333337" id="807-sv-mrh"/>
+                                                <constraint firstItem="J4O-Fg-Xby" firstAttribute="leading" secondItem="lPE-P9-X0l" secondAttribute="trailing" constant="238.66999999999999" id="9h0-qc-ZOG"/>
                                                 <constraint firstItem="lPE-P9-X0l" firstAttribute="top" secondItem="GIV-4e-Jeq" secondAttribute="bottom" constant="4.5" id="CLd-3c-F3d"/>
-                                                <constraint firstItem="lPE-P9-X0l" firstAttribute="leading" secondItem="6ts-7L-Jsg" secondAttribute="leadingMargin" id="Pmh-HR-zdA"/>
+                                                <constraint firstItem="KYj-gN-drS" firstAttribute="trailing" secondItem="6ts-7L-Jsg" secondAttribute="trailingMargin" id="M13-mT-20O"/>
+                                                <constraint firstItem="lPE-P9-X0l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6ts-7L-Jsg" secondAttribute="leadingMargin" id="Pmh-HR-zdA"/>
                                                 <constraint firstItem="GIV-4e-Jeq" firstAttribute="top" secondItem="6ts-7L-Jsg" secondAttribute="topMargin" id="R2x-jD-i8M"/>
                                                 <constraint firstItem="J4O-Fg-Xby" firstAttribute="top" secondItem="KYj-gN-drS" secondAttribute="bottom" constant="1.5" id="RYu-hR-JCN"/>
-                                                <constraint firstItem="J4O-Fg-Xby" firstAttribute="trailing" secondItem="6ts-7L-Jsg" secondAttribute="trailingMargin" id="hlG-7x-Wy9"/>
-                                                <constraint firstItem="J4O-Fg-Xby" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lPE-P9-X0l" secondAttribute="trailing" constant="8" symbolic="YES" id="p8N-hw-IvK"/>
-                                                <constraint firstItem="KYj-gN-drS" firstAttribute="top" secondItem="6ts-7L-Jsg" secondAttribute="topMargin" id="qlE-Fu-NEq"/>
-                                                <constraint firstItem="KYj-gN-drS" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6ts-7L-Jsg" secondAttribute="trailingMargin" id="suT-Ug-3zH"/>
+                                                <constraint firstItem="KYj-gN-drS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GIV-4e-Jeq" secondAttribute="trailing" constant="8" symbolic="YES" id="Uz5-Y0-Kf7"/>
+                                                <constraint firstItem="J4O-Fg-Xby" firstAttribute="trailing" secondItem="6ts-7L-Jsg" secondAttribute="trailingMargin" id="Wm2-01-9Jo"/>
+                                                <constraint firstItem="KYj-gN-drS" firstAttribute="top" secondItem="6ts-7L-Jsg" secondAttribute="topMargin" id="Xy6-T4-T4D"/>
+                                                <constraint firstItem="GIV-4e-Jeq" firstAttribute="leading" secondItem="6ts-7L-Jsg" secondAttribute="leading" constant="20" symbolic="YES" id="ulC-DR-Uvf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

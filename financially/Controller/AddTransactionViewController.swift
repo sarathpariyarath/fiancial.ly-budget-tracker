@@ -45,16 +45,6 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
         amountTextField.delegate = self
         notesTextField.delegate = self
         fetchTransactions()
-        if expenseCateory?.isEmpty == true {
-            DispatchQueue.main.async {
-                self.categoryPicker.isUserInteractionEnabled = false
-            }
-        }
-        if incoCategory?.isEmpty == true {
-            DispatchQueue.main.async {
-                self.categoryPicker.isUserInteractionEnabled = false
-            }
-        }
         categoryPicker.selectRow((transactions!.count/2), inComponent: 0, animated: true)
     }
     // Function to clear all textfields after end editing
@@ -89,7 +79,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
             self.transactions = try context.fetch(Transaction.fetchRequest())
             self.incoCategory = try context.fetch(IncomeCategory.fetchRequest())
             self.expenseCateory = try context.fetch(ExpenseCategory.fetchRequest())
-            
+
             
         } catch {
             print("error \(error.localizedDescription)")
@@ -173,6 +163,7 @@ class AddTransactionViewController: UIViewController, UIImagePickerControllerDel
                     }
                 } else if transactionTypeSegmentedControl.selectedSegmentIndex == 1 { //when expense category selected in segmented control
                     print("Expense :")
+                    
                     let transactionObject = Transaction(context: self.context)
                     transactionObject.isIncome = false
                     transactionObject.title = titleTextField.text
@@ -257,8 +248,18 @@ extension AddTransactionViewController: UIPickerViewDelegate, UIPickerViewDataSo
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if transactionTypeSegmentedControl.selectedSegmentIndex == 0 {
+            if incoCategory?.isEmpty == true {
+                categoryPicker.isUserInteractionEnabled = false
+            } else {
+                categoryPicker.isUserInteractionEnabled = true
+            }
             return incoCategory?.count ?? 0
         } else {
+            if expenseCateory?.isEmpty == true {
+                categoryPicker.isUserInteractionEnabled = false
+            } else {
+                categoryPicker.isUserInteractionEnabled = true
+            }
             return expenseCateory?.count ?? 0
         }
         
