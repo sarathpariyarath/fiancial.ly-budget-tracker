@@ -7,4 +7,5 @@ target 'financially' do
 
   # Pods for financially
 pod 'Charts'
+pod 'lottie-ios'
 end

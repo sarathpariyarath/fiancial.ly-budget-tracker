@@ -11,6 +11,7 @@
 		37161D452769A52C000429E1 /* IncomeOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37161D442769A52C000429E1 /* IncomeOverviewTableViewCell.swift */; };
 		37161D472769A9A8000429E1 /* ExpensePieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37161D462769A9A8000429E1 /* ExpensePieChartViewController.swift */; };
 		37161D492769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37161D482769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift */; };
+		3718F275278817BE00B91443 /* heart-lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 3718F274278817BD00B91443 /* heart-lottie.json */; };
 		371CC3CE27671AAA0079F851 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371CC3CD27671AAA0079F851 /* HomePageViewController.swift */; };
 		37967A1B27709CAB0011200D /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37967A1A27709CAB0011200D /* EditTransactionViewController.swift */; };
 		37983CAB27637175000FC4CE /* ExpenseCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */; };
@@ -44,6 +45,7 @@
 		37161D442769A52C000429E1 /* IncomeOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		37161D462769A9A8000429E1 /* ExpensePieChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensePieChartViewController.swift; sourceTree = "<group>"; };
 		37161D482769AEBD000429E1 /* ExpenseOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		3718F274278817BD00B91443 /* heart-lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "heart-lottie.json"; sourceTree = "<group>"; };
 		371CC3CD27671AAA0079F851 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		37967A1A27709CAB0011200D /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
 		37983CA527637175000FC4CE /* ExpenseCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				37B99FF5275B50DB004210CD /* SceneDelegate.swift */,
 				37B9A00D275B7209004210CD /* Controller */,
 				37B9A00A275B6EED004210CD /* View */,
+				3718F274278817BD00B91443 /* heart-lottie.json */,
 				370673F6275DDC3000A88228 /* CoreData */,
 				37B9A001275B50DB004210CD /* LaunchScreen.storyboard */,
 				37B99FFF275B50DB004210CD /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 				37B9A003275B50DB004210CD /* LaunchScreen.storyboard in Resources */,
 				37B9A000275B50DB004210CD /* Assets.xcassets in Resources */,
 				37B99FFB275B50DB004210CD /* Main.storyboard in Resources */,
+				3718F275278817BE00B91443 /* heart-lottie.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,15 +6,21 @@
 //
 
 import UIKit
-
+import Lottie
 class InfoViewController: UIViewController {
     @IBOutlet weak var stackView: UIView!
     @IBOutlet weak var appVersionLabel: UILabel!
+
+    @IBOutlet weak var animationView: AnimationView!
     let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
     @IBOutlet weak var versionView: UIView!
     @IBOutlet weak var biometricsSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        animationView.play()
         stackView.layer.cornerRadius = 10
         if isDarkMode == true {
             biometricsSwitch.isOn = true

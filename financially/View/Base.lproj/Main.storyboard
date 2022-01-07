@@ -1254,7 +1254,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="Fum-5C-F0x">
-                                        <rect key="frame" x="47.333333333333329" y="0.0" width="189.66666666666669" height="40"/>
+                                        <rect key="frame" x="47.333333333333329" y="0.0" width="191.66666666666669" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -1262,13 +1262,13 @@
                                         </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPTO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-iS-TpN">
-                                        <rect key="frame" x="240.00000000000003" y="0.0" width="40.333333333333343" height="40"/>
+                                        <rect key="frame" x="242.00000000000003" y="0.0" width="40.333333333333343" height="40"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="g1R-Nf-w6F">
-                                        <rect key="frame" x="283.33333333333331" y="0.0" width="100.66666666666669" height="40"/>
+                                        <rect key="frame" x="285.33333333333331" y="0.0" width="98.666666666666686" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="uiDatePickerClicked:" destination="6r1-Gz-iQ0" eventType="valueChanged" id="Mkw-v2-Rpc"/>
@@ -1847,12 +1847,25 @@
                                     <constraint firstAttribute="height" constant="50" id="usT-QK-58M"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYv-0k-O19" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="123" y="539" width="291" height="303"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="303" id="Dcg-iu-IiY"/>
+                                    <constraint firstAttribute="width" constant="291" id="qAy-Jd-wA8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="heart-lottie"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KVh-hp-ZVP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tYv-0k-O19" firstAttribute="trailing" secondItem="KVh-hp-ZVP" secondAttribute="trailing" id="8YI-Ig-ds1"/>
                             <constraint firstItem="o8F-Ez-R3F" firstAttribute="leading" secondItem="KVh-hp-ZVP" secondAttribute="leading" constant="10" id="GGK-eP-YcF"/>
                             <constraint firstItem="6jL-YX-WaH" firstAttribute="leading" secondItem="KVh-hp-ZVP" secondAttribute="leading" constant="10" id="Luv-nJ-eC5"/>
+                            <constraint firstItem="tYv-0k-O19" firstAttribute="bottom" secondItem="KVh-hp-ZVP" secondAttribute="bottom" id="YGc-WE-Bxw"/>
                             <constraint firstItem="6jL-YX-WaH" firstAttribute="top" secondItem="KVh-hp-ZVP" secondAttribute="top" constant="20" id="h2U-j7-3Zr"/>
                             <constraint firstItem="o8F-Ez-R3F" firstAttribute="top" secondItem="6jL-YX-WaH" secondAttribute="bottom" constant="8" symbolic="YES" id="ipi-TR-dC0"/>
                             <constraint firstItem="KVh-hp-ZVP" firstAttribute="trailing" secondItem="6jL-YX-WaH" secondAttribute="trailing" constant="10" id="qWW-fm-4DG"/>
@@ -1861,6 +1874,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="financial.ly" id="4mT-kG-cbR"/>
                     <connections>
+                        <outlet property="animationView" destination="tYv-0k-O19" id="fjl-Ub-vs8"/>
                         <outlet property="appVersionLabel" destination="LOA-NQ-onY" id="KGz-kM-JKa"/>
                         <outlet property="biometricsSwitch" destination="Jbe-8R-hHE" id="G7P-CK-mEC"/>
                         <outlet property="stackView" destination="6jL-YX-WaH" id="mpf-pg-Upp"/>
