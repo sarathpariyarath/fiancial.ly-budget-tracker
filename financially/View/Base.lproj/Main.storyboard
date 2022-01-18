@@ -374,8 +374,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="fgL-hr-pal" firstAttribute="top" secondItem="jTB-ei-D5e" secondAttribute="bottom" constant="1.5" id="1kc-sm-3rT"/>
-                                                <constraint firstItem="fgL-hr-pal" firstAttribute="leading" secondItem="1Tp-Ra-BOv" secondAttribute="trailing" constant="218.66666666666669" id="36H-1i-wd4"/>
-                                                <constraint firstItem="1Tp-Ra-BOv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IQB-Cs-avD" secondAttribute="leadingMargin" id="3oN-T6-PlN"/>
+                                                <constraint firstItem="fgL-hr-pal" firstAttribute="leading" relation="lessThanOrEqual" secondItem="1Tp-Ra-BOv" secondAttribute="trailing" constant="218.66666666666669" id="36H-1i-wd4"/>
+                                                <constraint firstItem="1Tp-Ra-BOv" firstAttribute="leading" secondItem="IQB-Cs-avD" secondAttribute="leadingMargin" id="3oN-T6-PlN"/>
                                                 <constraint firstItem="jTB-ei-D5e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BIA-o2-vXl" secondAttribute="trailing" constant="8" symbolic="YES" id="DRq-Bm-7hU"/>
                                                 <constraint firstItem="jTB-ei-D5e" firstAttribute="trailing" secondItem="IQB-Cs-avD" secondAttribute="trailingMargin" id="FdD-7c-gkx"/>
                                                 <constraint firstItem="fgL-hr-pal" firstAttribute="trailing" secondItem="IQB-Cs-avD" secondAttribute="trailingMargin" id="IoB-j7-8sp"/>
@@ -1254,7 +1254,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="Fum-5C-F0x">
-                                        <rect key="frame" x="47.333333333333329" y="0.0" width="191.66666666666669" height="40"/>
+                                        <rect key="frame" x="47.333333333333329" y="0.0" width="183.33333333333337" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -1262,13 +1262,13 @@
                                         </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPTO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-iS-TpN">
-                                        <rect key="frame" x="242.00000000000003" y="0.0" width="40.333333333333343" height="40"/>
+                                        <rect key="frame" x="233.66666666666666" y="0.0" width="40.333333333333343" height="40"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="g1R-Nf-w6F">
-                                        <rect key="frame" x="285.33333333333331" y="0.0" width="98.666666666666686" height="40"/>
+                                        <rect key="frame" x="277" y="0.0" width="107" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="uiDatePickerClicked:" destination="6r1-Gz-iQ0" eventType="valueChanged" id="Mkw-v2-Rpc"/>
@@ -1317,10 +1317,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="J4O-Fg-Xby" firstAttribute="leading" secondItem="lPE-P9-X0l" secondAttribute="trailing" constant="238.66999999999999" id="9h0-qc-ZOG"/>
+                                                <constraint firstItem="J4O-Fg-Xby" firstAttribute="leading" relation="lessThanOrEqual" secondItem="lPE-P9-X0l" secondAttribute="trailing" constant="238.66999999999999" id="9h0-qc-ZOG"/>
                                                 <constraint firstItem="lPE-P9-X0l" firstAttribute="top" secondItem="GIV-4e-Jeq" secondAttribute="bottom" constant="4.5" id="CLd-3c-F3d"/>
                                                 <constraint firstItem="KYj-gN-drS" firstAttribute="trailing" secondItem="6ts-7L-Jsg" secondAttribute="trailingMargin" id="M13-mT-20O"/>
-                                                <constraint firstItem="lPE-P9-X0l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6ts-7L-Jsg" secondAttribute="leadingMargin" id="Pmh-HR-zdA"/>
+                                                <constraint firstItem="lPE-P9-X0l" firstAttribute="leading" secondItem="6ts-7L-Jsg" secondAttribute="leadingMargin" id="Pmh-HR-zdA"/>
                                                 <constraint firstItem="GIV-4e-Jeq" firstAttribute="top" secondItem="6ts-7L-Jsg" secondAttribute="topMargin" id="R2x-jD-i8M"/>
                                                 <constraint firstItem="J4O-Fg-Xby" firstAttribute="top" secondItem="KYj-gN-drS" secondAttribute="bottom" constant="1.5" id="RYu-hR-JCN"/>
                                                 <constraint firstItem="KYj-gN-drS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GIV-4e-Jeq" secondAttribute="trailing" constant="8" symbolic="YES" id="Uz5-Y0-Kf7"/>
@@ -1958,6 +1958,9 @@
             <point key="canvasLocation" x="9718.8405797101459" y="-677.00892857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="tYv-0k-O19"/>
+    </designables>
     <resources>
         <image name="Expense arrow (4)" width="57" height="57"/>
         <image name="Income Arrow (3)" width="57" height="57"/>
