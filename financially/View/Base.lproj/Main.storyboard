@@ -643,24 +643,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="dPP-D2-Nw0">
-                                        <rect key="frame" x="47.333333333333314" y="0.0" width="171" height="40"/>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="dPP-D2-Nw0">
+                                        <rect key="frame" x="47.333333333333329" y="0.0" width="178.66666666666669" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="uiMinimumDateClicked:" destination="aJa-C4-qfb" eventType="valueChanged" id="g6s-0P-V1g"/>
                                         </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPTO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFl-NS-8VC">
-                                        <rect key="frame" x="221.33333333333334" y="0.0" width="40.333333333333343" height="40"/>
+                                        <rect key="frame" x="229" y="0.0" width="40.333333333333314" height="40"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="wCD-n5-OON">
-                                        <rect key="frame" x="264.66666666666669" y="0.0" width="109.33333333333331" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="109.33333333333333" id="6Wu-qy-JNa"/>
-                                        </constraints>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="wCD-n5-OON">
+                                        <rect key="frame" x="272.33333333333331" y="0.0" width="101.66666666666669" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="uiDatePickerClicked:" destination="aJa-C4-qfb" eventType="valueChanged" id="eNw-3b-noM"/>
                                         </connections>
@@ -784,32 +783,28 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="wfA-UD-64M">
-                                        <rect key="frame" x="47.333333333333329" y="0.0" width="139" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="139" id="vXI-RB-7pA"/>
-                                        </constraints>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="wfA-UD-64M">
+                                        <rect key="frame" x="47.333333333333329" y="0.0" width="178.66666666666669" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="uiMinimumDateClicked:" destination="DxX-WU-OHZ" eventType="valueChanged" id="lKo-xG-P0e"/>
                                         </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPTO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDk-F4-0rG">
-                                        <rect key="frame" x="189.33333333333334" y="0.0" width="40.333333333333343" height="40"/>
+                                        <rect key="frame" x="229" y="0.0" width="40.333333333333314" height="40"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="mpY-wB-1X6">
-                                        <rect key="frame" x="232.66666666666663" y="0.0" width="141.33333333333337" height="40"/>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="mpY-wB-1X6">
+                                        <rect key="frame" x="272.33333333333331" y="0.0" width="101.66666666666669" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="uiDatePickerClicked:" destination="DxX-WU-OHZ" eventType="valueChanged" id="gue-vD-BoV"/>
                                         </connections>
                                     </datePicker>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="wfA-UD-64M" firstAttribute="centerY" secondItem="cFt-t9-A3z" secondAttribute="centerY" id="AeZ-g8-Y6Y"/>
-                                    <constraint firstItem="mpY-wB-1X6" firstAttribute="centerY" secondItem="cFt-t9-A3z" secondAttribute="centerY" id="Td5-tP-SDh"/>
-                                    <constraint firstItem="bDk-F4-0rG" firstAttribute="centerY" secondItem="cFt-t9-A3z" secondAttribute="centerY" id="hgE-1H-bFY"/>
                                     <constraint firstAttribute="height" constant="40" id="jzv-cD-VNk"/>
                                 </constraints>
                             </stackView>
@@ -842,7 +837,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ygd-Pz-OJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5660.8695652173919" y="-1553.5714285714284"/>
+            <point key="canvasLocation" x="3778" y="-1059"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="a53-JM-cIX">
@@ -1254,7 +1249,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="Fum-5C-F0x">
-                                        <rect key="frame" x="47.333333333333329" y="0.0" width="183.33333333333337" height="40"/>
+                                        <rect key="frame" x="47.333333333333329" y="0.0" width="188.66666666666669" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -1262,13 +1257,13 @@
                                         </connections>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPTO :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-iS-TpN">
-                                        <rect key="frame" x="233.66666666666666" y="0.0" width="40.333333333333343" height="40"/>
+                                        <rect key="frame" x="239.00000000000003" y="0.0" width="40.333333333333343" height="40"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" datePickerMode="date" style="compact" id="g1R-Nf-w6F">
-                                        <rect key="frame" x="277" y="0.0" width="107" height="40"/>
+                                        <rect key="frame" x="282.33333333333331" y="0.0" width="101.66666666666669" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="uiDatePickerClicked:" destination="6r1-Gz-iQ0" eventType="valueChanged" id="Mkw-v2-Rpc"/>
